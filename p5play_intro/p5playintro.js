@@ -1,5 +1,6 @@
 let ball;
 let box;
+let boxes = [];
 
 function setup() {
   // Set up the canvas
@@ -23,6 +24,16 @@ function setup() {
   box.w = 50;
   box.h = 50;
   box.color = "yellow";
+
+  for (let i = 0; i < 6; i++) {
+    let b = new Sprite();
+    b.x = random(50, width - 50);
+    b.y = random(50, height - 50);
+    b.w = 40;
+    b.h = 40;
+    b.color = color(random(255), random(255), random(255));
+    boxes.push(b);
+  }
 
   box2 = new Sprite();
   box2.x = 400;
