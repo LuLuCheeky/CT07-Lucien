@@ -41,17 +41,38 @@ function draw() {
   textSize(16);
   text("Ball: (" + int(ball.x) + ", " + int(ball.y) + ")", 10, 20);
   text("Mouse: (" + int(mouse.x) + ", " + int(mouse.y) + ")", 10, 40);
-  if (ball.x < 0 + ball.diameter / 2 || ball.x > width - ball.diameter / 2) {
+  if (ball.x < ball.diameter / 2) {
     ball.vel.x *= -1;
+    ball.x = ball.diameter / 2;
   }
-  if (ball.y < 0 + ball.diameter / 2 || ball.y > height - ball.diameter / 2) {
-    ball.vel.y *= -1;
-  }
-    if (box2.x < 0 + box2.diameter / 2 || box2.x > width - box2.diameter / 2) {
+  if (ball.x > width - ball.diameter / 2) {
     ball.vel.x *= -1;
+    ball.x = width - ball.diameter / 2;
   }
-  if (box2.y < 0 + box2.diameter / 2 || box2.y > height - box2.diameter / 2) {
+  if (ball.y < ball.diameter / 2) {
     ball.vel.y *= -1;
+    ball.y = ball.diameter / 2;
+  }
+  if (ball.y > height - ball.diameter / 2) {
+    ball.vel.y *= -1;
+    ball.y = height - ball.diameter / 2;
+  }
+
+  if (box2.x < box2.w / 2) {
+    box2.vel.x *= -1;
+    box2.x = box2.w / 2;
+  }
+  if (box2.x > width - box2.w / 2) {
+    box2.vel.x *= -1;
+    box2.x = width - box2.w / 2;
+  }
+  if (box2.y < box2.h / 2) {
+    box2.vel.y *= -1;
+    box2.y = box2.h / 2;
+  }
+  if (box2.y > height - box2.h / 2) {
+    box2.vel.y *= -1;
+    box2.y = height - box2.h / 2;
   }
 
   box.x = mouse.x;
