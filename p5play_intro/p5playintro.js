@@ -25,7 +25,7 @@ function setup() {
   box.h = 50;
   box.color = "yellow";
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 15; i++) {
     let b = new Sprite();
     b.x = random(50, width - 50);
     b.y = random(50, height - 50);
@@ -39,15 +39,6 @@ function setup() {
     boxes.push(b);
   }
 
-  box2 = new Sprite();
-  box2.x = 400;
-  box2.y = 200;
-  box2.w = 50;
-  box2.h = 50;
-  box2.color = "yellow";
-  box2.vel.x = 4;
-  box2.vel.y = 3;
-  box2.collider = "dynamic";
 }
 
 function draw() {
