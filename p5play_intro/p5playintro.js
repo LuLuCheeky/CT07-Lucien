@@ -30,6 +30,9 @@ function setup() {
   box2.w = 50;
   box2.h = 50;
   box2.color = "yellow";
+  box2.vel.x = 4;
+  box2.vel.y = 3;
+  box2.collider = "dynamic";
 }
 
 function draw() {
