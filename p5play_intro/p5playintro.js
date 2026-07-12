@@ -52,23 +52,23 @@ function draw() {
     ball.y = height - ball.diameter / 2;
   }
 
-  if (box2.x < box2.w / 2) {
-    box2.vel.x *= -1;
-    box2.x = box2.w / 2;
+  if (ball2.x < ball2.diameter / 2) {
+    ball2.vel.x *= -1;
+    ball2.x = ball2.diameter / 2;
   }
-  if (box2.x > width - box2.w / 2) {
-    box2.vel.x *= -1;
-    box2.x = width - box2.w / 2;
+  if (ball2.x > width - ball2.diameter / 2) {
+    ball2.vel.x *= -1;
+    ball2.x = width - ball2.diameter / 2;
   }
-  if (box2.y < box2.h / 2) {
-    box2.vel.y *= -1;
-    box2.y = box2.h / 2;
+  if (ball2.y < ball2.diameter / 2) {
+    ball2.vel.y *= -1;
+    ball2.y = ball2.diameter / 2;
   }
-  if (box2.y > height - box2.h / 2) {
-    box2.vel.y *= -1;
-    box2.y = height - box2.h / 2;
+  if (ball2.y > height - ball2.diameter / 2) {
+    ball2.vel.y *= -1;
+    ball2.y = height - ball2.diameter / 2;
   }
 
-  box.x = mouse.x;
-  box.y = mouse.y;
+  ball2.x = mouse.x;
+  ball2.y = mouse.y;
 }
