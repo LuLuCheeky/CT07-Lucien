@@ -5,6 +5,6 @@ function setup() {
   let width = 10;
   let area = height * width / 2;
   console.log(area);
-  text
+  text(area, 100, 100)
 }
 
