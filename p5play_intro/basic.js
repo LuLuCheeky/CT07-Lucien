@@ -42,5 +42,6 @@ function setup() {
     console.log(count);
     count -= 2;
   } 
+  let groceries = 
 }
 
