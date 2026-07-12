@@ -7,6 +7,9 @@ function setup() {
   let area = height * width / 2;
   console.log(area);
   text(area, 100, 100)
-  for (let i = 9; i <= 20; i++) {}
+  for (let i = 9; i <= 20; i++) {
+    console.log(i);
+  }
+  for (let i = 0; i < 10; i++) {
 }
 
