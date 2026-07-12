@@ -42,6 +42,7 @@ function setup() {
     console.log(count);
     count -= 2;
   } 
-  let groceries = 
+  let groceries = ["apple", "bread", "milk"];
+  
 }
 
