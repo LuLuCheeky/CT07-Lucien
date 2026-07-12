@@ -26,6 +26,7 @@ function setup() {
   ball2.vel.x = 4;
   ball2.vel.y = 3;
   ball2.collider = "dynamic";
+  ball2.bounciness = 1.0;
 
   for (let i = 0; i < 6; i++) {
     let b = new Sprite();
