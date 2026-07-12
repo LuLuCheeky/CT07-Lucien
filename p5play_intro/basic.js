@@ -13,6 +13,6 @@ function setup() {
   for (let i = 19; i > 0; i--) {
     console.log(i);
   }
-  for (let i = 2)
+  for (let i = 2; i <)
 }
 
