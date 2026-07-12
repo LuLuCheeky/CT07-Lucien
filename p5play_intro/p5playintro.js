@@ -12,10 +12,10 @@ function setup() {
   ball.y = 200;
   ball.diameter = 40;
   ball.color = "yellow"
-  ball.vel.x = 30;
-  ball.vel.y = 30;
+  ball.vel.x = 60;
+  ball.vel.y = 60;
   ball.collider = "dynamic";
-  ball.bounciness = 1.0;
+  ball.bounciness = 10.0;
   
   
   box = new Sprite();
