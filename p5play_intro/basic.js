@@ -7,6 +7,7 @@ function setup() {
   let area = height * width / 2;
   let total = 0;
   let age = 0;
+  let count = 
   console.log(area);
   text(area, 100, 100)
   for (let i = 10; i <= 20; i++) {
@@ -37,7 +38,7 @@ function setup() {
   }
 
 
-  
+
   while () {
     console.log(i);
   } 
