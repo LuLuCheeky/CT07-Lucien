@@ -39,7 +39,7 @@ function setup() {
 
 
   while (count > 0) {
-    count -=
+    count -= 2;
     console.log(i);
   } 
 }
