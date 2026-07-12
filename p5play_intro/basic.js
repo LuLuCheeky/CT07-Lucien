@@ -20,5 +20,7 @@ function setup() {
   for (let i = 2; i < 20; i += 2) {
     total += i;
   }
+  console.log(total);
+  
 }
 
