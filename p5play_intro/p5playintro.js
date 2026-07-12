@@ -2,13 +2,6 @@ let ball;
 let box;
 let boxes = [];
 
-function keepSpriteInside(sprite) {
-  let radius = sprite.diameter ? sprite.diameter / 2 : Math.max(sprite.w, sprite.h) / 2;
-
-  sprite.x = constrain(sprite.x, radius, width - radius);
-  sprite.y = constrain(sprite.y, radius, height - radius);
-}
-
 function setup() {
   // Set up the canvas
   new Canvas(800, 400);
@@ -23,7 +16,6 @@ function setup() {
   ball.vel.y = 30;
   ball.collider = "dynamic";
   ball.bounciness = 1.0;
-  keepSpriteInside(ball);
   
   
   box = new Sprite();
@@ -35,16 +27,11 @@ function setup() {
 
   for (let i = 0; i < 6; i++) {
     let b = new Sprite();
-    let margin = 60;
-    b.x = random(margin, width - margin);
-    b.y = random(margin, height - margin);
-    b.diameter = 40;
+    b.x = random(50, width - 50);
+    b.y = random(50, height - 50);
+    b.w = 40;
+    b.h = 40;
     b.color = color(random(255), random(255), random(255));
-    b.vel.x = random(-4, 4);
-    b.vel.y = random(-4, 4);
-    b.collider = "dynamic";
-    b.bounciness = 1.0;
-    keepSpriteInside(b);
     boxes.push(b);
   }
 
@@ -57,7 +44,6 @@ function setup() {
   box2.vel.x = 4;
   box2.vel.y = 3;
   box2.collider = "dynamic";
-  keepSpriteInside(box2);
 }
 
 function draw() {
@@ -100,9 +86,6 @@ function draw() {
     box2.y = height - box2.h / 2;
   }
 
-  boxes.forEach(keepSpriteInside);
-
   box.x = mouse.x;
   box.y = mouse.y;
-  keepSpriteInside(box);
 }
