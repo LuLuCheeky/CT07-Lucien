@@ -3,11 +3,10 @@ let box;
 let boxes = [];
 
 function keepSpriteInside(sprite) {
-  let halfW = sprite.w ? sprite.w / 2 : sprite.diameter / 2;
-  let halfH = sprite.h ? sprite.h / 2 : sprite.diameter / 2;
+  let radius = sprite.diameter ? sprite.diameter / 2 : Math.max(sprite.w, sprite.h) / 2;
 
-  sprite.x = constrain(sprite.x, halfW, width - halfW);
-  sprite.y = constrain(sprite.y, halfH, height - halfH);
+  sprite.x = constrain(sprite.x, radius, width - radius);
+  sprite.y = constrain(sprite.y, radius, height - radius);
 }
 
 function setup() {
@@ -39,8 +38,7 @@ function setup() {
     let margin = 60;
     b.x = random(margin, width - margin);
     b.y = random(margin, height - margin);
-    b.w = 40;
-    b.h = 40;
+    b.diameter = 40;
     b.color = color(random(255), random(255), random(255));
     keepSpriteInside(b);
     boxes.push(b);
