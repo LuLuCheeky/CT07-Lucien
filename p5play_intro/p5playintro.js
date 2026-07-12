@@ -18,15 +18,32 @@ function setup() {
   ball.bounciness = 1.0;
   
   
-  ball2 = new Sprite();
-  ball2.x = 400;
-  ball2.y = 200;
-  ball2.diameter = 40;
-  ball2.color = "blue";
-  ball2.vel.x = 4;
-  ball2.vel.y = 3;
-  ball2.collider = "dynamic";
-  ball2.bounciness = 1.0;
+  box = new Sprite();
+  box.x = 100;
+  box.y = 100;
+  box.w = 50;
+  box.h = 50;
+  box.color = "yellow";
+
+  for (let i = 0; i < 6; i++) {
+    let b = new Sprite();
+    b.x = random(50, width - 50);
+    b.y = random(50, height - 50);
+    b.w = 40;
+    b.h = 40;
+    b.color = color(random(255), random(255), random(255));
+    boxes.push(b);
+  }
+
+  box2 = new Sprite();
+  box2.x = 400;
+  box2.y = 200;
+  box2.w = 50;
+  box2.h = 50;
+  box2.color = "yellow";
+  box2.vel.x = 4;
+  box2.vel.y = 3;
+  box2.collider = "dynamic";
 }
 
 function draw() {
@@ -52,17 +69,17 @@ function draw() {
     ball.y = height - ball.diameter / 2;
   }
 
-  if (ball2.x < ball2.diameter / 2) {
-    ball2.vel.x *= -1;
-    ball2.x = ball2.diameter / 2;
+  if (box2.x < box2.w / 2) {
+    box2.vel.x *= -1;
+    box2.x = box2.w / 2;
   }
-  if (ball2.x > width - ball2.diameter / 2) {
-    ball2.vel.x *= -1;
-    ball2.x = width - ball2.diameter / 2;
+  if (box2.x > width - box2.w / 2) {
+    box2.vel.x *= -1;
+    box2.x = width - box2.w / 2;
   }
-  if (ball2.y < ball2.diameter / 2) {
-    ball2.vel.y *= -1;
-    ball2.y = ball2.diameter / 2;
+  if (box2.y < box2.h / 2) {
+    box2.vel.y *= -1;
+    box2.y = box2.h / 2;
   }
   if (box2.y > height - box2.h / 2) {
     box2.vel.y *= -1;
