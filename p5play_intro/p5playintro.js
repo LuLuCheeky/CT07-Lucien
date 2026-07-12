@@ -36,8 +36,9 @@ function setup() {
 
   for (let i = 0; i < 6; i++) {
     let b = new Sprite();
-    b.x = random(50, width - 50);
-    b.y = random(50, height - 50);
+    let margin = 60;
+    b.x = random(margin, width - margin);
+    b.y = random(margin, height - margin);
     b.w = 40;
     b.h = 40;
     b.color = color(random(255), random(255), random(255));
