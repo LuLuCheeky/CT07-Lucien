@@ -6,17 +6,17 @@ function setup() {
   let width = 10;
   let area = height * width / 2;
   let total = 0;
-  console.log(area);
-  text(area, 100, 100)
-  for (let i = 10; i <= 20; i++) {
-    console.log(i);
-  }
-  for (let i = 20; i > 9; i--) {
-    console.log(i);
-  }
-  for (let i = 3; i < 46; i+=3) {
-    console.log(i);
-  }
+  // console.log(area);
+  // text(area, 100, 100)
+  // for (let i = 10; i <= 20; i++) {
+  //   console.log(i);
+  // }
+  // for (let i = 20; i > 9; i--) {
+  //   console.log(i);
+  // }
+  // for (let i = 3; i < 46; i+=3) {
+  //   console.log(i);
+  // }
   for (let i = 2; i < 20; i += 2) {
     console.log(i);
     total += i;
