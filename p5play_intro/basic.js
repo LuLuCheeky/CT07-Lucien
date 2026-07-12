@@ -35,7 +35,7 @@ function setup() {
     }
   while () {
     console.log(i);
-   } 
+  } 
   }
 }
 
