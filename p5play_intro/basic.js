@@ -46,5 +46,6 @@ function setup() {
   console.log(groceries);
   groceries.push("orange");
   groceries.push("butter");
+  groveries.shift()
 }
 
