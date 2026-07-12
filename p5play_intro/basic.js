@@ -33,7 +33,7 @@ function setup() {
     } else {
       console.log("secondary");
     }
-   while () {
+  while () {
     console.log(i);
    } 
   }
