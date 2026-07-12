@@ -33,8 +33,8 @@ function setup() {
     } else {
       console.log("secondary");
     }
-   while (i == 19; i-=2) {
-    
+   while (i == 19; i < i-=2) {
+
    } 
   }
 }
