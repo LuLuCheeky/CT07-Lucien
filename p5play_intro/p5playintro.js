@@ -24,6 +24,7 @@ function setup() {
   box.w = 50;
   box.h = 50;
   box.color = "yellow";
+  box.rotation = 100;
 
   for (let i = 0; i < 6; i++) {
     let b = new Sprite();
@@ -88,4 +89,5 @@ function draw() {
 
   box.x = mouse.x;
   box.y = mouse.y;
+  box.rotation += 3;
 }
