@@ -23,5 +23,6 @@ function setup() {
   }
   console.log(total);
   text(total, 100, 200);
+
 }
 
