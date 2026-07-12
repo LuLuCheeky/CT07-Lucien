@@ -18,12 +18,14 @@ function setup() {
   ball.bounciness = 1.0;
   
   
-  box = new Sprite();
-  box.x = 100;
-  box.y = 100;
-  box.w = 50;
-  box.h = 50;
-  box.color = "yellow";
+  ball2 = new Sprite();
+  ball2.x = 400;
+  ball2.y = 200;
+  ball2.diameter = 40;
+  ball2.color = "blue";
+  ball2.vel.x = 4;
+  ball2.vel.y = 3;
+  ball2.collider = "dynamic";
 
   for (let i = 0; i < 6; i++) {
     let b = new Sprite();
