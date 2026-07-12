@@ -39,8 +39,8 @@ function setup() {
 
 
   while (count > 1) {
-    count -= 2;
     console.log(count);
+    count -= 2;
   } 
 }
 
