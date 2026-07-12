@@ -27,8 +27,9 @@ function setup() {
   for (let i = 0; i < 13; i++) {
     age += 1;
     if (age <= 9) {
-      console.log("You are a child");
+      console.log("lower primary");
     }
+    
   }
 }
 
