@@ -64,11 +64,11 @@ function draw() {
     ball2.vel.y *= -1;
     ball2.y = ball2.diameter / 2;
   }
-  if (ball2.y > height - ball2.diameter / 2) {
-    ball2.vel.y *= -1;
-    ball2.y = height - ball2.diameter / 2;
+  if (box2.y > height - box2.h / 2) {
+    box2.vel.y *= -1;
+    box2.y = height - box2.h / 2;
   }
 
-  ball2.x = mouse.x;
-  ball2.y = mouse.y;
+  box.x = mouse.x;
+  box.y = mouse.y;
 }
