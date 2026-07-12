@@ -13,7 +13,7 @@ function setup() {
   for (let i = 19; i > 1; i--) {
     console.log(i);
   }
-  for (let i = 2; i < 46; i++) {
+  for (let i = 3; i < 46; i+=3) {
     console.log(i);
   }
 }
