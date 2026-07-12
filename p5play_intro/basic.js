@@ -26,7 +26,9 @@ function setup() {
   text(total, 100, 200);
   for (let i = 0; i < 13; i++) {
     age += 1;
-    if (age)
+    if (age <= 9) {
+      console.log("You are a child");
+    }
   }
 }
 
