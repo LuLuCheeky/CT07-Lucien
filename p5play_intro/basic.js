@@ -3,7 +3,7 @@ function setup() {
   console.log("setup");
   let height = 5;
   let width = 10;
-  let area = height * width;
-  console.log((width * height) / 2)
+  let area = height * width / 2;
+  console.log(area);
 }
 
