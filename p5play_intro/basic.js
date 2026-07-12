@@ -6,6 +6,7 @@ function setup() {
   let width = 10;
   let area = height * width / 2;
   let total = 0;
+  let age = 0;
   console.log(area);
   text(area, 100, 100)
   for (let i = 10; i <= 20; i++) {
