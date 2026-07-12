@@ -38,15 +38,15 @@ function setup() {
     boxes.push(b);
   }
 
-  box2 = new Sprite();
-  box2.x = 400;
-  box2.y = 200;
-  box2.w = 50;
-  box2.h = 50;
-  box2.color = "yellow";
-  box2.vel.x = 4;
-  box2.vel.y = 3;
-  box2.collider = "dynamic";
+  ball3 = new Sprite();
+  ball3.x = 600;
+  ball3.y = 200;
+  ball3.diameter = 40;
+  ball3.color = "green";
+  ball3.vel.x = 5;
+  ball3.vel.y = 2;
+  ball3.collider = "dynamic";
+  ball3.bounciness = 1.0;
 }
 
 function draw() {
