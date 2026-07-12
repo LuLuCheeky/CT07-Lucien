@@ -21,6 +21,6 @@ function setup() {
     total += i;
   }
   console.log(total);
-  
+  text(total, 100, 200);
 }
 
