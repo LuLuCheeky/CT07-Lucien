@@ -34,7 +34,7 @@ function setup() {
       console.log("secondary");
     }
    while (i == 19; i < i-=2) {
-
+    
    } 
   }
 }
