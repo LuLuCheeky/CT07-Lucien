@@ -27,26 +27,6 @@ function setup() {
   ball2.vel.y = 3;
   ball2.collider = "dynamic";
   ball2.bounciness = 1.0;
-
-  for (let i = 0; i < 6; i++) {
-    let b = new Sprite();
-    b.x = random(50, width - 50);
-    b.y = random(50, height - 50);
-    b.w = 40;
-    b.h = 40;
-    b.color = color(random(255), random(255), random(255));
-    boxes.push(b);
-  }
-
-  ball3 = new Sprite();
-  ball3.x = 600;
-  ball3.y = 200;
-  ball3.diameter = 40;
-  ball3.color = "green";
-  ball3.vel.x = 5;
-  ball3.vel.y = 2;
-  ball3.collider = "dynamic";
-  ball3.bounciness = 1.0;
 }
 
 function draw() {
