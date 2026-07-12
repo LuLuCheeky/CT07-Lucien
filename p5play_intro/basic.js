@@ -36,8 +36,10 @@ function setup() {
  
   }
 
+
+  
   while () {
-  console.log(i);
+    console.log(i);
   } 
 }
 
