@@ -36,8 +36,8 @@ function setup() {
  
   }
 
-   while () {
-    console.log(i);
+  while () {
+  console.log(i);
   } 
 }
 
