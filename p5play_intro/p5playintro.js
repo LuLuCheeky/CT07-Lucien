@@ -40,6 +40,10 @@ function setup() {
     b.y = random(margin, height - margin);
     b.diameter = 40;
     b.color = color(random(255), random(255), random(255));
+    b.vel.x = random(-4, 4);
+    b.vel.y = random(-4, 4);
+    b.collider = "dynamic";
+    b.bounciness = 1.0;
     keepSpriteInside(b);
     boxes.push(b);
   }
