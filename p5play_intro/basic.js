@@ -24,6 +24,6 @@ function setup() {
   }
   console.log(total);
   text(total, 100, 200);
-  for (let i = 0; i < )
+  for (let i = 0; i ++)
 }
 
