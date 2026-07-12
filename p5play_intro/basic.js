@@ -3,6 +3,6 @@ function setup() {
   console.log("setup");
   let height = 5;
   let width = 10;
-  width
+  console.log()
 }
 
