@@ -24,18 +24,16 @@ function setup() {
   }
   console.log(total);
   text(total, 100, 200);
-  for (let i = 0; i < 13; i++) {
-    age += 1;
-    if (age <= 9) {
+  let ageLoop = 0;
+  while (ageLoop < 13) {
+    ageLoop += 1;
+    if (ageLoop <= 9) {
       console.log("lower primary");
-    } else if (age <= 12) {
+    } else if (ageLoop <= 12) {
       console.log("upper primary");
     } else {
       console.log("secondary");
     }
-   while (i == 19; i < i-=2) {
-    console.log(i);
-   } 
   }
 }
 
