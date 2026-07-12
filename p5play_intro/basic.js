@@ -1,7 +1,7 @@
 function setup() {
   new Canvas(800, 400);
   console.log("setup");
-  background(22)
+  background(220);
   let height = 5;
   let width = 10;
   let area = height * width / 2;
