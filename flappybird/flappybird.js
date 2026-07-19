@@ -39,7 +39,7 @@ function draw() {
     textSize(20);
     text("vel.y: " + bird.vel.y.toFixed(2), 10, 20);
     text("isMoving: " + bird.isMoving, 10, 40);
-    text()
+    text("isSleeping: " + bird.sleeping, 10, 60);
 }
 
 function preload() {
