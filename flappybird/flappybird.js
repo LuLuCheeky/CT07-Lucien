@@ -15,7 +15,7 @@ function setup() {
     bird.collider = "dynamic";
     bird.mass = 2;
     bird.drag = 0.02;
-    bird.bounciness = 5;
+    bird.bounciness = 2.5;
     world.gravity.y = 10;
 
     floor = new Sprite();
