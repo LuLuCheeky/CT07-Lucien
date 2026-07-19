@@ -8,5 +8,6 @@ function draw() {
 }
 
 function preload() {
-    plapMidImg = loadImage()
+    plapMidImg = loadImage("assets/yellowbird-midflap.png");
+    
 }
