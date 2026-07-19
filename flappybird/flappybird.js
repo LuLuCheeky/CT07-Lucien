@@ -32,7 +32,7 @@ function draw() {
     image(bg, 0, 0, width, height);
 
     if (kb.presses("space") || kb.presses("w")) {
-        bird.vel.y = -4;
+        bird.vel.y = -3;
         bird.sleeping = false;
     }
     fill("blue");
