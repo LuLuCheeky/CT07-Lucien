@@ -10,11 +10,12 @@ function setup() {
     bird.y = 200;
     bird.width = 30;
     bird.hieght = 30;
-    bird.img = flap
+    bird.img = flapMidImg;
 }
 
 
 function draw() {    
+    image(bg,)
 }
 
 
