@@ -23,7 +23,7 @@ function setup() {
   box.y = 100;
   box.w = 50;
   box.h = 50;
-  box.color = "yellow";
+  box.color = color(random(255), random(255), random(255));
   box.rotation = 100;
 
   for (let i = 0; i < 6; i++) {
