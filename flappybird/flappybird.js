@@ -31,10 +31,11 @@ function setup() {
 function draw() {    
     image(bg, 0, 0, width, height);
 
-    if (kb.presses(["space", "w"])) {
+    if (kb.presses("space") || kb.presses("w")) {
         bird.vel.y = -4;
         bird.sleeping = false;
     }
+    fill("blue");
 }
 
 
