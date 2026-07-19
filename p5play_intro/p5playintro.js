@@ -23,7 +23,7 @@ function setup() {
   box.y = 100;
   box.w = 50;
   box.h = 50;
-  box.color = color(random(255), random(255), random(255));
+  box.color = C;
   box.rotation = 100;
 
   for (let i = 0; i < 6; i++) {
@@ -41,7 +41,7 @@ function setup() {
   box2.y = 200;
   box2.w = 50;
   box2.h = 50;
-  box2.color = "yellow";
+  box2.color = col;
   box2.vel.x = 4;
   box2.vel.y = 3;
   box2.collider = "dynamic";
