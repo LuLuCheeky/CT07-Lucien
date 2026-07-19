@@ -7,7 +7,7 @@ function setup() {
     background(255);
     bird = new Sprite();
     bird.x = width / 2;
-    bird.y = height / 2 - 50;
+    bird.y = 350;
     bird.width = 30;
     bird.height = 30;
     bird.img = flapMidImg;
