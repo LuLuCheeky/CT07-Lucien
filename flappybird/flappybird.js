@@ -8,5 +8,5 @@ function draw() {
 }
 
 function preload() {
-    pla
+    plapMidImg = loadImage()
 }
