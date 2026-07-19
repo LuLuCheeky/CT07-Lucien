@@ -1,13 +1,16 @@
 let bird, floor;
-let flapMidImg
+let flapMidImg, bg, base;
+
+
 function setup() {
     createCanvas(400, 600);
     background(255);
 }
 
-function draw() {
-    
+
+function draw() {    
 }
+
 
 function preload() {
     plapMidImg = loadImage("assets/yellowbird-midflap.png");
