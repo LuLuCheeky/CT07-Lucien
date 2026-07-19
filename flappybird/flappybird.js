@@ -37,7 +37,7 @@ function draw() {
     }
     fill("black");
     textSize(20);
-    text("vel.y: " + bird.vel.y.toFixed(999), 10, 20);
+    text("vel.y: " + bird.vel.y.toFixed(50), 10, 20);
     text("isMoving: " + bird.isMoving, 10, 40);
     text("isSleeping: " + bird.sleeping, 10, 60);
 }
