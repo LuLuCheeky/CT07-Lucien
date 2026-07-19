@@ -15,7 +15,7 @@ function setup() {
     bird.collider = "dynamic";
     bird.mass = 2;
     bird.drag = 0.02;
-    bird.bounciness = 0.5;
+    bird.bounciness = 10;
     world.gravity.y = 10;
 
     floor = new Sprite();
@@ -23,7 +23,8 @@ function setup() {
     floor.y = height - 20;
     floor.width = 400;
     floor.height = 125;
-    floor.collider
+    floor.collider = "static";
+    floor.img = base;
 }
 
 
