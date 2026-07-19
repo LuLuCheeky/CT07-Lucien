@@ -48,7 +48,10 @@ function setup() {
 }
 
 function draw() {
-  background(240);
+  noStroke();
+  fill(240, 80);
+  rect(0, 0, width, height);
+
   fill(0);
   textSize(16);
   text("Ball: (" + int(ball.x) + ", " + int(ball.y) + ")", 10, 20);
