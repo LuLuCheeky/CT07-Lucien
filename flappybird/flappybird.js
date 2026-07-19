@@ -31,8 +31,8 @@ function setup() {
 function draw() {    
     image(bg, 0, 0, width, height);
 
-    if (kb.presses("space")) {
-        bird.vel.y = -2.5;
+    if (kb.presses("")) {
+        bird.vel.y = -4;
         bird.sleeping = false;
     }
 }
