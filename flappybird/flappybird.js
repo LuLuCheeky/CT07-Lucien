@@ -5,7 +5,9 @@ let flapMidImg, bg, base;
 function setup() {
     createCanvas(400, 600);
     background(255);
-    bird
+    bird = new Sprite();
+    bird.x = width / 2;
+    
 }
 
 
