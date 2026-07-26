@@ -42,7 +42,7 @@ function draw() {
     } else if (bird.vel.y == 0){
         bird.img = flapMidImg
     }
-    bird.rotation = bird.vel.y * 5
+    bird.rotation = bird.vel.y * 10
     fill("black");
     textSize(20);
     text("vel.y: " + bird.vel.y.toFixed(2), 10, 20);
