@@ -36,7 +36,7 @@ function draw() {
 
     if (kb.presses("space") || kb.presses("w") || mouseIsPressed) {
         for (let i = bird.vel.y; i = -3; i--){
-            
+            bird.vel.y = i
         }
     }
 
