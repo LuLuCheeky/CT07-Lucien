@@ -48,7 +48,9 @@ function draw() {
 
     bird.rotation = bird.vel.y * 10
 
-    console.log(pipeGroup.length)
+    for (let i = 0; i < 2; i++){
+        
+    }
 
     fill("black");
     textSize(20);
