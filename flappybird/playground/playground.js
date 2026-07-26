@@ -48,7 +48,7 @@ function draw() {
 
     bird.rotation = bird.vel.y * 10
 
-    bird.x = 200
+    
 
     fill("black");
     textSize(20);
