@@ -46,7 +46,7 @@ function draw() {
         bird.img = flapMidImg
     }
 
-    bird.rotation = bird.vel.y * 10
+    pip
 
     bird.x += 2;
     camera.x = bird.x
