@@ -59,7 +59,8 @@ function draw() {
     if (frameCount == 1){
         spawnPipePair();
     }
-        pipeGroup.x -= 2
+    
+    pipeGroup.x -= 2
 }
 
 function preload() {
