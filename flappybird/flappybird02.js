@@ -27,7 +27,7 @@ function setup() {
     floor.collider = "static";
     floor.img = base;
 
-    pipeGroup = new Group()
+    pipeGroup = new Group();
 }
 
 
@@ -38,6 +38,7 @@ function draw() {
         bird.vel.y = -3;
         bird.sleeping = false;
     }
+    
     if (bird.vel.y < 0) {
         bird.img = flapDownImg
     } else if (bird.vel.y > 0){
