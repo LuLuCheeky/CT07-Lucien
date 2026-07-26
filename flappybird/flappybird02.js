@@ -1,5 +1,6 @@
 let bird, floor;
 let flapMidImg, flapUpImg, flapDownImg, bg, base;
+let pipeGroup;
 
 
 function setup() {
