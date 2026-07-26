@@ -66,9 +66,9 @@ function preload() {
     flapMidImg = loadImage("assets/yellowbird-midflap.png");
     flapDownImg = loadImage("assets/yellowbird-downflap.png"); //GOING UPWARDS
     flapUpImg = loadImage("assets/yellowbird-upflap.png"); //GOING DOWNWARDS 
-    bg = loadImage("assets/background-night.png");
+    bg = loadImage("assets/background-day.png");
     base = loadImage("assets/base.png");
-    pipe = loadImage("assets/pipe-g")
+    pipe = loadImage("assets/pipe-green.png")
 }
 
 function spawnPipePair(){
