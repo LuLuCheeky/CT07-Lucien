@@ -1,7 +1,7 @@
-let bird, floor;
+let bird, floor, pipe;
 let flapMidImg, flapUpImg, flapDownImg, bg, base;
 let pipeGroup;
-let pipe, bottomPipe, topPipe;
+let bottomPipe, topPipe;
 
 function setup() {
     createCanvas(400, 600);
