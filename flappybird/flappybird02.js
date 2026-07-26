@@ -35,7 +35,7 @@ function draw() {
     image(bg, 0, 0, width, height);
 
     if (kb.presses("space") || kb.presses("w") || mouseIsPressed) {
-        
+        bird.vel.y = -3
     }
 
     if (bird.vel.y < 0) {
