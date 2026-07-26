@@ -73,5 +73,7 @@ function preload() {
 
 function spawnPipePair(){
     let gap = 50;
-    let midY 
+    let midY = height / 2;
+
+    bottom pipe
 }
