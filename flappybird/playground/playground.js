@@ -50,10 +50,6 @@ function draw() {
 
     bird.x = 200
 
-    for (let i = 0; i < pipeGroup.length; i++) {
-        pipeGroup[i].x -= 2;
-    }
-
     fill("black");
     textSize(20);
     text("vel.y: " + bird.vel.y.toFixed(2), 10, 20);
