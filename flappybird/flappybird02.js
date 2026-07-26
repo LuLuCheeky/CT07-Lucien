@@ -38,7 +38,7 @@ function draw() {
         bird.vel.y = -3;
         bird.sleeping = false;
     }
-    
+
     if (bird.vel.y < 0) {
         bird.img = flapDownImg
     } else if (bird.vel.y > 0){
@@ -46,7 +46,9 @@ function draw() {
     } else if (bird.vel.y == 0){
         bird.img = flapMidImg
     }
+
     bird.rotation = bird.vel.y * 10
+    
     bird.x = 200
     fill("black");
     textSize(20);
