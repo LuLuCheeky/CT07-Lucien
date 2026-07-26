@@ -46,7 +46,7 @@ function draw() {
         bird.img = flapMidImg
     }
 
-    pip
+    
 
     bird.x += 2;
     camera.x = bird.x
