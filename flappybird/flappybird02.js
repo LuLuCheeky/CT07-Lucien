@@ -38,8 +38,8 @@ function draw() {
     if (bird.vel.y < 0) {
         bird.img = flapDownImg
     } else if (bird.vel.y > 0){
-
-    }
+        bird.img = flapUpImg
+    } else {}
     fill("black");
     textSize(20);
     text("vel.y: " + bird.vel.y.toFixed(2), 10, 20);
