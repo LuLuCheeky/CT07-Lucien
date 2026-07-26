@@ -36,7 +36,7 @@ function draw() {
         bird.sleeping = false;
     }
     if (bird.vel.y < 0) {
-        bird.img = flap
+        bird.img = flapDownImg
     }
     fill("black");
     textSize(20);
