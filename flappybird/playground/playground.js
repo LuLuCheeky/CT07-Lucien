@@ -48,7 +48,8 @@ function draw() {
 
     bird.rotation = bird.vel.y * 10
 
-     
+    bird.x += 0.5;
+    camera.x = bird.x + 100; 
 
     fill("black");
     textSize(20);
