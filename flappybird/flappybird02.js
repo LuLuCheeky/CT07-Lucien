@@ -44,7 +44,7 @@ function draw() {
 
 function preload() {
     flapMidImg = loadImage("assets/yellowbird-midflap.png");
-    
+    flapDownImg = loadImage("assets/yellowbird")
     bg = loadImage("assets/background-night.png");
     base = loadImage("assets/base.png");
 }
