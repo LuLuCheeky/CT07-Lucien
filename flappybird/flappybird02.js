@@ -57,7 +57,7 @@ function draw() {
     text("isMoving: " + bird.isMoving, 10, 40);
     text("isSleeping: " + bird.sleeping, 10, 60);
 
-    if (frameCount === 1){
+    if (frameCount == 1){
         spawnPipePair();
     }
 }
@@ -68,4 +68,8 @@ function preload() {
     flapUpImg = loadImage("assets/yellowbird-upflap.png"); //GOING DOWNWARDS 
     bg = loadImage("assets/background-night.png");
     base = loadImage("assets/base.png");
+}
+
+function spawnPipePair(){
+    
 }
