@@ -43,7 +43,7 @@ function draw() {
         bird.img = flapMidImg
     }
     bird.rotation = bird.vel.y * 10
-    bird.x = 
+    bird.x = 200
     fill("black");
     textSize(20);
     text("vel.y: " + bird.vel.y.toFixed(2), 10, 20);
