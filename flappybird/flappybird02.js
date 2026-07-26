@@ -43,7 +43,6 @@ function draw() {
         bird.rotation = bird.vel.y * 5
     } else if (bird.vel.y == 0){
         bird.img = flapMidImg
-        bird.rotation = 0 
     }
     fill("black");
     textSize(20);
