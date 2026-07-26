@@ -49,7 +49,6 @@ function draw() {
     bird.rotation = bird.vel.y * 10
 
     pipeGroup.x += -2
-    camera.x = pipeGroup.x
 
     fill("black");
     textSize(20);
@@ -87,5 +86,4 @@ function spawnPipePair(){
     pipeGroup.add(bottomPipe);
     pipeGroup.add(topPipe)
     pipeGroup.layer = 0;
-    pipeGroup.vel.x = -2;
 }
