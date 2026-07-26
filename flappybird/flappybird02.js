@@ -40,7 +40,7 @@ function draw() {
     } else if (bird.vel.y > 0){
         bird.img = flapUpImg
     } else {
-        bird.img = 
+        bird.img = flapMidImg
     }
     fill("black");
     textSize(20);
