@@ -13,9 +13,9 @@ function setup() {
     bird.img = flapMidImg;
 
     bird.collider = "dynamic";
-    bird.mass = 2;
+    bird.mass = 0;
     bird.drag = 0.02;
-    bird.bounciness = 1;
+    bird.bounciness = 0;
     world.gravity.y = 10;
 
     floor = new Sprite();
