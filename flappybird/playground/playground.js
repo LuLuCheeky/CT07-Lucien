@@ -49,7 +49,10 @@ function draw() {
     bird.rotation = bird.vel.y * 10
 
     for (let i = 0; i < 2; i++){
-        
+        if (pipeGroup[i].x < -100){
+            pipeGroup[i].remove();
+            spawnPipePair();
+        }
     }
 
     fill("black");
