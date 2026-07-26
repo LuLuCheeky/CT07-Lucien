@@ -48,7 +48,7 @@ function draw() {
 
     bird.rotation = bird.vel.y * 10
 
-    pipeGroup.vel.x = -2
+    pipeGroup.x += -2
     camera.x = bird.x
 
     fill("black");
