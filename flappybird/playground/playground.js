@@ -48,6 +48,7 @@ function draw() {
 
     bird.x += 2;
     camera.x = bird.x
+    floor.x = camera.x
 
     fill("black");
     textSize(20);
