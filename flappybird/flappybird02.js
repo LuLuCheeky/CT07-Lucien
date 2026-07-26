@@ -35,8 +35,9 @@ function draw() {
     image(bg, 0, 0, width, height);
 
     if (kb.presses("space") || kb.presses("w") || mouseIsPressed) {
-        bird.vel.y = -3;
-        bird.sleeping = false;
+        for (let i = bird.vel.y; i = -3; i--){
+            
+        }
     }
 
     if (bird.vel.y < 0) {
@@ -77,6 +78,9 @@ function spawnPipePair(){
 
     bottomPipe = new Sprite(400, midY + gap / 2 + 200, 52, 320, "static");
     bottomPipe.img = pipe;
+
+    topPipe = new Sprite(400, midY - gap / 2 + 200, 52, 320, "static");
+    topPipe.img = pipe;
 
     pipeGroup.add(bottomPipe);
     pipeGroup.layer = 0;
