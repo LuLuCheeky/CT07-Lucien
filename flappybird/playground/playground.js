@@ -81,14 +81,14 @@ function spawnPipePair(){
 
     bottomPipe = new Sprite(400, midY + gap / 2 + 200, 52, 320, "static");
     bottomPipe.img = pipe;
-    bottomPipe.vel.x = -2;
+
 
     topPipe = new Sprite(400, midY - gap / 2 - 200, 52, 320, "static");
     topPipe.img = pipe
     topPipe.rotation = 180
-    topPipe.vel.x = -2;
 
     pipeGroup.add(bottomPipe);
     pipeGroup.add(topPipe)
     pipeGroup.layer = 0;
+    pipe
 }
