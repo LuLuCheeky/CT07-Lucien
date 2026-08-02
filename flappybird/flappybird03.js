@@ -39,7 +39,7 @@ function setup() {
     bird.img = flapMidImg; // defined earlier in preload()
 
   // setting bird physics
-    bird.collider = "dynamic"; 
+    bird.collider = "static"; 
     bird.mass = 2;         // heavier = stronger pull from gravity
     bird.drag = 0.02;      // air resistance
     bird.bounciness = 0.5; // how much it bounces when hitting floor
