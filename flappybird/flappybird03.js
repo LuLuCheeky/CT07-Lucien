@@ -70,10 +70,10 @@ function draw() {
 
     if (startGame){
           // Apply upward push when space is pressed
-    if (kb.presses('space') || mouse.presses()) {
-        bird.vel.y = -5; // which direction do you think this is?
-        bird.sleeping = false; // wake up if sleeping
-    }
+        if (kb.presses('space') || mouse.presses()) {
+            bird.vel.y = -5; // which direction do you think this is?
+            bird.sleeping = false; // wake up if sleeping
+        }
   
   // Activity: Change image according to flying action/ falling
         if (bird.vel.y < -1) {
