@@ -99,15 +99,15 @@ function draw() {
         spawnPipePair();
     }
 
-    for (let pipe of pipeGroup){
-        if (pipe.x < -50){
-            pipe.remove();
+        for (let pipe of pipeGroup){
+            if (pipe.x < -50){
+                pipe.remove();
+            }
         }
-    }
 
   // Debug info (optional)
-    fill("black");
-    textSize(20);
+        fill("black");
+        textSize(20);
         text('vel.y: ' + bird.vel.y.toFixed(2), 10, 20);
         text('isMoving: ' + bird.isMoving, 10, 40);
         text('sleeping: ' + bird.sleeping , 10, 60);
