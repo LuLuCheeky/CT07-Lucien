@@ -59,7 +59,7 @@ function draw() {
     bird.x += 2;
     camera.x = bird.x; 
     
-    if (bird.x - floor.x == 2){
+    if (bird.x - floor.x == 280){
         floor.x = bird.x + 250
     }
 
