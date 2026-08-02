@@ -34,8 +34,8 @@ function setup() {
     bird = new Sprite();
     bird.x = width / 2;
     bird.y = 200,
-    bird.width = 15;
-    bird.height = 15;
+    bird.width = 10;
+    bird.height = 10;
     bird.img = flapMidImg; // defined earlier in preload()
     bird.visible = false
 
