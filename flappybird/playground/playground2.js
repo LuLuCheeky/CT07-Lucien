@@ -88,7 +88,7 @@ function draw() {
 
 function spawnPipePair(){
   // fill in this code later
-    // control the gap and height of the top and bottom pipe
+   // control the gap and height of the top and bottom pipe
     let gap = 50;
     let midY = height / 2;
 
@@ -99,7 +99,7 @@ function spawnPipePair(){
 
   // create the bottom pipe sprite
   bottomPipe = new Sprite(400, midY + gap / 2 + 200, 52, 320, 'static');
-  bottomPipe.img = pipe;
+    bottomPipe.img = pipe;
 
   pipeGroup.add(topPipe);
   pipeGroup.add(bottomPipe);
