@@ -77,6 +77,8 @@ function draw() {
         spawnPipePair();
     }
 
+    if (frameCount % 90)
+
   // Debug info (optional)
     fill("black");
     textSize(20);
@@ -84,7 +86,7 @@ function draw() {
     text('isMoving: ' + bird.isMoving, 10, 40);
     text('sleeping: ' + bird.sleeping , 10, 60);
 
-    
+
 }
  
 
