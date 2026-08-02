@@ -69,7 +69,7 @@ function draw() {
     }
     bird.rotation = bird.vel.y * 10
 
-    bird.x += 20;
+    bird.x += 100;
     camera.x = bird.x; 
     floor.x = bird.x;
 
