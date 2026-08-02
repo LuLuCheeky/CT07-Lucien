@@ -99,7 +99,7 @@ function draw() {
     text('sleeping: ' + bird.sleeping , 10, 60);
 
     if (bird.collides(pipeGroup) || bird.collides(floor)){
-        gameOverLabel = new Sprite(width/2,)
+        gameOverLabel = new Sprite(width / 2, height / 2,)
     }
 
 
