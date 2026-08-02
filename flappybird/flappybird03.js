@@ -80,7 +80,8 @@ function draw() {
     if (frameCount % 90 === 0){
         spawnPipePair();
     }
-    
+
+    for (let pipe of pipeGroup)
 
   // Debug info (optional)
     fill("black");
