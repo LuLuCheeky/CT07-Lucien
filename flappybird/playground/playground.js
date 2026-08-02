@@ -1,4 +1,4 @@
-let bird, floor, pipe;
+let bird, floor, floor2, pipe;
 let flapMidImg, flapUpImg, flapDownImg, bg, base;
 let pipeGroup;
 let bottomPipe, topPipe;
@@ -50,8 +50,6 @@ function draw() {
 
     bird.x += 2;
     camera.x = bird.x; 
-    floor.x = camera.x;
-
     
 
     fill("black");
