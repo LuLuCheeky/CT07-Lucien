@@ -95,7 +95,6 @@ function draw() {
     text('sleeping: ' + bird.sleeping , 10, 60);
 
     if (bird.collides(pipeGroup) || bird.collides(floor)){
-        console.log("You... LOSE");
         noLoop();
     }
 
