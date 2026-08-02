@@ -77,6 +77,10 @@ function draw() {
         spawnPipePair();
     }
 
+    if (frameCount % 90 === 0){
+        
+    }
+
 }
 
 function preload() {
