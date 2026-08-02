@@ -68,7 +68,7 @@ function draw() {
         bird.vel.y = -5; // which direction do you think this is?
         bird.sleeping = false; // wake up if sleeping
         startGame = true;
-        startScreenLabel.visible
+        startScreenLabel.visible = false;
     }
   
   // Activity: Change image according to flying action/ falling
