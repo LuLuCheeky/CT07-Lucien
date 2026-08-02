@@ -54,6 +54,8 @@ function setup() {
     floor.img = base;
 
     pipeGroup = new Group();
+
+    startScreenLabel = new Sprite(width / 2, hieght)
 }
 
 function draw() {
