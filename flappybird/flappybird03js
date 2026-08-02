@@ -47,10 +47,10 @@ function draw() {
     }
 
     bird.rotation = bird.vel.y * 10
-    
-    bird.x += 5;
-    camera.x = bird.x;
-    floor.x = camera.x;
+
+    bird.x += 2;
+    camera.x = bird.x; 
+    floor.x = bird.x;
 
     fill("black");
     textSize(20);
@@ -60,6 +60,16 @@ function draw() {
 
     if (frameCount == 1){
         spawnPipePair();
+    }
+
+    if (frameCount % 90 === 0){
+        spawnPipePair();
+    }
+
+    for (let pipe of pipeGroup){
+        if (pipe.x < -50){
+            pipe.remove();
+        }
     }
 }
 
@@ -78,6 +88,7 @@ function spawnPipePair(){
 
     bottomPipe = new Sprite(400, midY + gap / 2 + 200, 52, 320, "static");
     bottomPipe.img = pipe;
+
 
     topPipe = new Sprite(400, midY - gap / 2 - 200, 52, 320, "static");
     topPipe.img = pipe
