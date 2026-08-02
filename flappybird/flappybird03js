@@ -50,7 +50,7 @@ function draw() {
     
     bird.x += 5;
     camera.x = bird.x;
-    floor.x
+    floor.x = camera.x;
 
     fill("black");
     textSize(20);
