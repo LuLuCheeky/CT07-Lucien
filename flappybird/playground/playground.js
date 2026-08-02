@@ -30,8 +30,8 @@ function setup() {
     floor2 = new Sprite();
     floor2.x = 600;
     floor.y = height - 20;
-    floor.width = 400;
-    floor.height = 125;
+    floor2.width = 400;
+    floor2.height = 125;
     floor2.collider = "static"
     floor2.img = base;
 
