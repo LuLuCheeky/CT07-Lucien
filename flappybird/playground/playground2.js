@@ -67,6 +67,11 @@ function draw() {
   else {
     bird.img = flapMidImg; // neutral
   }
+    bird.rotation = bird.vel.y * 10
+
+    bird.x += 2;
+    camera.x = bird.x; 
+    floor.x = bird.x;
 
   if (frameCount === 1){
     spawnPipePair();
