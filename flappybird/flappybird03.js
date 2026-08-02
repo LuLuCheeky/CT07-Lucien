@@ -141,7 +141,7 @@ function spawnPipePair(){
     topPipe.rotation = 180;
 
   // create the bottom pipe sprite
-    bottomPipe = new Sprite(bird.x + 400, midY + gap / 2 + 185, 52, 320, 'static');
+    bottomPipe = new Sprite(bird.x + 400, midY + gap / 2 + 165, 52, 320, 'static');
     bottomPipe.img = pipe;
 
     pipeGroup.add(topPipe);
