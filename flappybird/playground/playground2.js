@@ -60,13 +60,13 @@ function draw() {
   // Activity: Change image according to flying action/ falling
     if (bird.vel.y < -1) {
         bird.img = flapUpImg; // flying upward
-  } 
-  else if (bird.vel.y > 1) {
-    bird.img = flapDownImg; // falling
-  } 
-  else {
-    bird.img = flapMidImg; // neutral
-  }
+    } 
+    else if (bird.vel.y > 1) {
+        bird.img = flapDownImg; // falling
+    } 
+    else {
+        bird.img = flapMidImg; // neutral
+    }
     bird.rotation = bird.vel.y * 10
 
     bird.x += 2;
