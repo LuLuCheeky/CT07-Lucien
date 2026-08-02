@@ -69,9 +69,7 @@ function draw() {
     }
 
     if (startGame){
-        
-    }
-  // Apply upward push when space is pressed
+          // Apply upward push when space is pressed
     if (kb.presses('space') || mouse.presses()) {
         bird.vel.y = -5; // which direction do you think this is?
         bird.sleeping = false; // wake up if sleeping
@@ -121,6 +119,7 @@ function draw() {
         gameOverLabel.x = camera.x;
 
         noLoop();
+    }
     }
 
 
