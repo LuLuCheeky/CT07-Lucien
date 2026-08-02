@@ -35,7 +35,7 @@ function setup() {
     bird.x = width / 2;
     bird.y = 200,
     bird.width = 15;
-    bird.height = 20;
+    bird.height = 15;
     bird.img = flapMidImg; // defined earlier in preload()
     bird.visible = false
 
@@ -136,12 +136,12 @@ function spawnPipePair(){
     let midY = random(250, height - 250);
 
   // create the top pipe
-    topPipe = new Sprite(bird.x + 400, midY - gap / 2 - 160, 52, 320, 'static');
+    topPipe = new Sprite(bird.x + 400, midY - gap / 2 - 155, 52, 320, 'static');
     topPipe.img = pipe;
     topPipe.rotation = 180;
 
   // create the bottom pipe sprite
-    bottomPipe = new Sprite(bird.x + 400, midY + gap / 2 + 160, 52, 320, 'static');
+    bottomPipe = new Sprite(bird.x + 400, midY + gap / 2 + 15, 52, 320, 'static');
     bottomPipe.img = pipe;
 
     pipeGroup.add(topPipe);
