@@ -89,15 +89,15 @@ function draw() {
 
     bird.x += 2;
     camera.x = bird.x; 
-    floor.x = bird.x;
+        floor.x = bird.x;
 
-    if (frameCount === 1){
-        spawnPipePair();
-    }
+        if (frameCount === 1){
+            spawnPipePair();
+        }
 
-    if (frameCount % 90 === 0){
-        spawnPipePair();
-    }
+        if (frameCount % 90 === 0){
+            spawnPipePair();
+        }
 
         for (let pipe of pipeGroup){
             if (pipe.x < -50){
