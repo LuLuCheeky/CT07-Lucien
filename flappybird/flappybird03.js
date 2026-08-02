@@ -56,7 +56,7 @@ function setup() {
     pipeGroup = new Group();
 
     startScreenLabel = new Sprite(width / 2, hieght / 2, 50, 50, "none");
-    startScreenImg 
+    startScreenLabel.img = startScreenImg; 
 }
 
 function draw() {
