@@ -19,7 +19,7 @@ function preload() {
     bg = loadImage('assets/background-day.png');
     base = loadImage('assets/base.png');
 
-    gameOverImg
+    gameOverImg = loadImage("assets/gameO")
 }
 
 function setup() {
