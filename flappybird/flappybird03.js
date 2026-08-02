@@ -96,7 +96,7 @@ function draw() {
 
     if (bird.collides(pipeGroup) || bird.collides(floor)){
         noLoop();
-        console.log()
+        console.log("You... LOSE");
     }
 
 
