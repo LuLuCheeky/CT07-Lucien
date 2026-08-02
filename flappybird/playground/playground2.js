@@ -73,14 +73,14 @@ function draw() {
     camera.x = bird.x; 
     floor.x = bird.x;
 
-  if (frameCount === 1){
-    spawnPipePair();
-  }
+    if (frameCount === 1){
+        spawnPipePair();
+    }
 
   // Debug info (optional)
-  fill("blue");
-  textSize(14);
-  text('vel.y: ' + bird.vel.y.toFixed(2), 10, 20);
+    fill("blue");
+    textSize(14);
+    text('vel.y: ' + bird.vel.y.toFixed(2), 10, 20);
   text('isMoving: ' + bird.isMoving, 10, 40);
   text('sleeping: ' + bird.sleeping , 10, 60);
 }
