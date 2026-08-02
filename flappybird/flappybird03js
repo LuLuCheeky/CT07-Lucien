@@ -49,7 +49,7 @@ function draw() {
     bird.rotation = bird.vel.y * 10
     
     bird.x += 5
-    camera
+    camera.x = bird.x
 
     fill("black");
     textSize(20);
