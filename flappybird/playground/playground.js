@@ -1,4 +1,4 @@
-let bird, floor, floor2, pipe;
+let bird, floor, pipe;
 let flapMidImg, flapUpImg, flapDownImg, bg, base;
 let pipeGroup;
 let bottomPipe, topPipe;
@@ -27,14 +27,6 @@ function setup() {
     floor.collider = "static";
     floor.img = base;
 
-    floor2 = new Sprite();
-    floor2.x = 600;
-    floor2.y = height - 20;
-    floor2.width = 400;
-    floor2.height = 125;
-    floor2.collider = "static"
-    floor2.img = base;
-
     pipeGroup = new Group();
 }
 
@@ -58,7 +50,7 @@ function draw() {
 
     bird.x += 2;
     camera.x = bird.x; 
-    floor.x = floor
+    floor.x = bird.x;
 
     fill("black");
     textSize(20);
