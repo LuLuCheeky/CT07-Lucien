@@ -81,18 +81,18 @@ function draw() {
     fill("blue");
     textSize(14);
     text('vel.y: ' + bird.vel.y.toFixed(2), 10, 20);
-  text('isMoving: ' + bird.isMoving, 10, 40);
-  text('sleeping: ' + bird.sleeping , 10, 60);
+    text('isMoving: ' + bird.isMoving, 10, 40);
+    text('sleeping: ' + bird.sleeping , 10, 60);
 }
  
 
 function spawnPipePair(){
   // fill in this code later
     // control the gap and height of the top and bottom pipe
-  let gap = 50;
-  let midY = height / 2;
+    let gap = 50;
+    let midY = height / 2;
 
-  // create the top pipe
+    // create the top pipe
   topPipe = new Sprite(400, midY - gap / 2 - 200, 52, 320, 'static');
   topPipe.img = pipe;
   topPipe.rotation = 180;
