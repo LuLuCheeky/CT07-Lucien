@@ -23,7 +23,7 @@ function preload() {
 
     gameOverImg = loadImage("assets/gameover.png");
 
-    start
+    startScreenImg = loadImage("assets")
 }
 
 function setup() {
