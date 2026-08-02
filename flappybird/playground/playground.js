@@ -63,8 +63,8 @@ function draw() {
         floor.x = bird.x + 325
     }
 
-    if (bird.x - floor2.x == 150){
-        floor2.x = bird.x + 200
+    if (bird.x - floor2.x == 325){
+        floor2.x = bird.x + 325
     }
 
     fill("black");
