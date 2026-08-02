@@ -29,7 +29,7 @@ function setup() {
 
     floor2 = new Sprite();
     floor2.x = 600;
-    floor.y = height - 20;
+    floor2.y = height - 20;
     floor2.width = 400;
     floor2.height = 125;
     floor2.collider = "static"
