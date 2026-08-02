@@ -28,7 +28,7 @@ function setup() {
     floor.img = base;
 
     floor2 = new Sprite();
-    
+    floor2.x = 
 
     pipeGroup = new Group();
 }
