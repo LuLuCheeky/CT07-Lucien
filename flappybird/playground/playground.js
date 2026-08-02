@@ -64,7 +64,7 @@ function draw() {
     }
 
     if (bird.x - floor2.x == 400){
-        floor.x = bird.x + 200
+        floor2.x = bird.x + 200
     }
 
     fill("black");
