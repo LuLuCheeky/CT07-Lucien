@@ -69,7 +69,7 @@ function draw() {
     }
     bird.rotation = bird.vel.y * 10
 
-    bird.x += 2;
+    bird.x += 20;
     camera.x = bird.x; 
     floor.x = bird.x;
 
@@ -105,12 +105,12 @@ function spawnPipePair(){
     let midY = height / 2;
 
   // create the top pipe
-    topPipe = new Sprite(400, midY - gap / 2 - 200, 52, 320, 'static');
+    topPipe = new Sprite(bird.x + 400, midY - gap / 2 - 200, 52, 320, 'static');
     topPipe.img = pipe;
     topPipe.rotation = 180;
 
   // create the bottom pipe sprite
-    bottomPipe = new Sprite(400, midY + gap / 2 + 200, 52, 320, 'static');
+    bottomPipe = new Sprite(bird.x + 400, midY + gap / 2 + 200, 52, 320, 'static');
     bottomPipe.img = pipe;
 
     pipeGroup.add(topPipe);
