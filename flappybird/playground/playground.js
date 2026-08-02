@@ -63,7 +63,7 @@ function draw() {
         floor.x = bird.x + 300
     }
 
-    if (bird.x - floor2.x == 325){
+    if (bird.x - floor2.x == 300){
         floor2.x = bird.x + 300
     }
 
