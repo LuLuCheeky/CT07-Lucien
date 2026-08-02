@@ -4,6 +4,7 @@ let flapUpImg,flapDownImg; // images for flap up and down
 let pipe; // image for pipes
 let topPipe, bottomPipe;
 let pipeGroup; // declare the group for pipe
+let gameOv
 
 function preload() {
     // bird image, background and the floor
