@@ -59,7 +59,10 @@ function draw() {
     bird.x += 2;
     camera.x = bird.x; 
     
-    if (bird.x - floor.x)
+    if (bird.x - floor.x == 400){
+        
+    }
+
 
     fill("black");
     textSize(20);
