@@ -29,7 +29,8 @@ function setup() {
 
     floor2 = new Sprite();
     floor2.x = 600;
-    f
+    floor.y = height - 20;
+    floor.width = 400;
 
     pipeGroup = new Group();
 }
