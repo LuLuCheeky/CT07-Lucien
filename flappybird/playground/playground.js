@@ -32,7 +32,8 @@ function setup() {
     floor.y = height - 20;
     floor.width = 400;
     floor.height = 125;
-    floor.collider = "static"
+    floor2.collider = "static"
+    floor2.img = base;
 
     pipeGroup = new Group();
 }
