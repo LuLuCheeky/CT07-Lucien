@@ -34,7 +34,7 @@ function setup() {
     bird = new Sprite();
     bird.x = width / 2;
     bird.y = 200,
-    bird.width = 20;
+    bird.width = 15;
     bird.height = 20;
     bird.img = flapMidImg; // defined earlier in preload()
     bird.visible = false
@@ -74,7 +74,7 @@ function draw() {
         bird.visible = true
           // Apply upward push when space is pressed
         if (kb.presses('space') || mouse.presses()) {
-            bird.vel.y = -3; // which direction do you think this is?
+            bird.vel.y = -2; // which direction do you think this is?
             bird.sleeping = false; // wake up if sleeping
         }
   
