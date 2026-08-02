@@ -27,7 +27,8 @@ function setup() {
     floor.collider = "static";
     floor.img = base;
 
-    floor2 = new Sprite()
+    floor2 = new Sprite();
+    
 
     pipeGroup = new Group();
 }
