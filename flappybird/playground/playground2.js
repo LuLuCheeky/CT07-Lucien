@@ -49,17 +49,17 @@ function setup() {
 }
 
 function draw() {
-  image(bg, 0, 0, width, height);
+    image(bg, 0, 0, width, height);
 
   // Apply upward push when space is pressed
-  if (kb.presses('space') || mouse.presses()) {
-    bird.vel.y = -5; // which direction do you think this is?
-    bird.sleeping = false; // wake up if sleeping
-  }
+    if (kb.presses('space') || mouse.presses()) {
+        bird.vel.y = -5; // which direction do you think this is?
+        bird.sleeping = false; // wake up if sleeping
+    }
   
   // Activity: Change image according to flying action/ falling
-  if (bird.vel.y < -1) {
-    bird.img = flapUpImg; // flying upward
+    if (bird.vel.y < -1) {
+        bird.img = flapUpImg; // flying upward
   } 
   else if (bird.vel.y > 1) {
     bird.img = flapDownImg; // falling
