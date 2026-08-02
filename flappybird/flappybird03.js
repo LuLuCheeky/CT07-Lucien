@@ -98,7 +98,7 @@ function draw() {
             spawnPipePair();
         }
 
-        if (frameCount % 65 === 0){
+        if (frameCount % 75 === 0){
             spawnPipePair();
         }
 
