@@ -62,7 +62,6 @@ function setup() {
 
 function draw() {
     image(bg, 0, 0, width, height);
-
     
   // Apply upward push when space is pressed
     if (kb.presses('space') || mouse.presses()) {
