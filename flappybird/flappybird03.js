@@ -37,6 +37,7 @@ function setup() {
     bird.width = 20;
     bird.height = 20;
     bird.img = flapMidImg; // defined earlier in preload()
+    bird.visible = false
 
   // setting bird physics
     bird.collider = "static"; 
