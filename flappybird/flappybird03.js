@@ -67,6 +67,8 @@ function draw() {
     if (kb.presses('space') || mouse.presses()) {
         bird.vel.y = -5; // which direction do you think this is?
         bird.sleeping = false; // wake up if sleeping
+        startGame = true;
+        
     }
   
   // Activity: Change image according to flying action/ falling
