@@ -78,11 +78,13 @@ function draw() {
     }
 
   // Debug info (optional)
-    fill("blue");
-    textSize(14);
+    fill("black");
+    textSize(20);
     text('vel.y: ' + bird.vel.y.toFixed(2), 10, 20);
     text('isMoving: ' + bird.isMoving, 10, 40);
     text('sleeping: ' + bird.sleeping , 10, 60);
+
+    
 }
  
 
