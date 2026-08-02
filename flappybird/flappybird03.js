@@ -74,7 +74,7 @@ function draw() {
         bird.visible = true
           // Apply upward push when space is pressed
         if (kb.presses('space') || mouse.presses()) {
-            bird.vel.y = -5; // which direction do you think this is?
+            bird.vel.y = -2; // which direction do you think this is?
             bird.sleeping = false; // wake up if sleeping
         }
   
