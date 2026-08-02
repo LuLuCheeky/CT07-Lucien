@@ -74,7 +74,7 @@ function draw() {
         bird.visible = true
           // Apply upward push when space is pressed
         if (kb.presses('space') || mouse.presses()) {
-            bird.vel.y = -2; // which direction do you think this is?
+            bird.vel.y = -1.5; // which direction do you think this is?
             bird.sleeping = false; // wake up if sleeping
         }
   
@@ -136,7 +136,7 @@ function spawnPipePair(){
     let midY = random(250, height - 250);
 
   // create the top pipe
-    topPipe = new Sprite(bird.x + 400, midY - gap / 2 - 165, 52, 320, 'static');
+    topPipe = new Sprite(bird.x + 400, midY - gap / 2 - 16, 52, 320, 'static');
     topPipe.img = pipe;
     topPipe.rotation = 180;
 
