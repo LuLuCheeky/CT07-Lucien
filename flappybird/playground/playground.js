@@ -52,6 +52,8 @@ function draw() {
     camera.x = bird.x; 
     floor.x = camera.x;
 
+    
+
     fill("black");
     textSize(20);
     text("vel.y: " + bird.vel.y.toFixed(2), 10, 20);
