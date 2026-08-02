@@ -6,6 +6,7 @@ let topPipe, bottomPipe;
 let pipeGroup; // declare the group for pipe
 let gameOverImg;
 let gameOverLabel;
+let startScreenLabel;
 
 function preload() {
     // bird image, background and the floor
