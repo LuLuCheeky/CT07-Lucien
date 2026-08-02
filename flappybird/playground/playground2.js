@@ -19,22 +19,22 @@ function preload() {
 }
 
 function setup() {
-  new Canvas(400, 600);
+    new Canvas(400, 600);
 
   // Bird Sprite construction
-  bird = new Sprite();
-  bird.x = width / 2;
-  bird.y = 200,
-  bird.width = 30;
-  bird.height = 30;
-  bird.img = flapMidImg; // defined earlier in preload()
+    bird = new Sprite();
+    bird.x = width / 2;
+    bird.y = 200,
+    bird.width = 30;
+    bird.height = 30;
+    bird.img = flapMidImg; // defined earlier in preload()
 
   // setting bird physics
-  bird.collider = "dynamic"; 
-  bird.mass = 2;         // heavier = stronger pull from gravity
-  bird.drag = 0.02;      // air resistance
-  bird.bounciness = 0.5; // how much it bounces when hitting floor
-  world.gravity.y = 10;
+    bird.collider = "dynamic"; 
+    bird.mass = 2;         // heavier = stronger pull from gravity
+    bird.drag = 0.02;      // air resistance
+    bird.bounciness = 0.5; // how much it bounces when hitting floor
+    world.gravity.y = 10;
 
   // Floor to bounce bird
     floor = new Sprite();
