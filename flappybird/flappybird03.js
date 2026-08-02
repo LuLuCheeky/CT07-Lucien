@@ -64,10 +64,11 @@ function draw() {
     image(bg, 0, 0, width, height);
 
     if (kb.presses('space') || mouse.presses()) {
-        bird.vel.y = -5; // which direction do you think this is?
-        bird.sleeping = false; // wake up if sleeping
+        startGame = true;
+        startScreenLabel = false;
     }
 
+    if (startGame)
   // Apply upward push when space is pressed
     if (kb.presses('space') || mouse.presses()) {
         bird.vel.y = -5; // which direction do you think this is?
