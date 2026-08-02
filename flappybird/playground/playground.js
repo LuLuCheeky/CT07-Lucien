@@ -31,6 +31,7 @@ function setup() {
     floor2.x = 600;
     floor.y = height - 20;
     floor.width = 400;
+    floor.height = 125;
 
     pipeGroup = new Group();
 }
