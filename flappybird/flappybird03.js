@@ -7,6 +7,7 @@ let pipeGroup; // declare the group for pipe
 let gameOverImg;
 let gameOverLabel;
 let startScreenLabel;
+let startScreenImg;
 
 function preload() {
     // bird image, background and the floor
@@ -21,6 +22,8 @@ function preload() {
     base = loadImage('assets/base.png');
 
     gameOverImg = loadImage("assets/gameover.png");
+
+    start
 }
 
 function setup() {
