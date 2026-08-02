@@ -77,7 +77,10 @@ function draw() {
         spawnPipePair();
     }
 
-    if (frameCount % 90)
+    if (frameCount % 90 === 0){
+        spawnPipePair();
+    }
+    
 
   // Debug info (optional)
     fill("black");
