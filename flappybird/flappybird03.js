@@ -108,18 +108,18 @@ function draw() {
   // Debug info (optional)
     fill("black");
     textSize(20);
-    text('vel.y: ' + bird.vel.y.toFixed(2), 10, 20);
-    text('isMoving: ' + bird.isMoving, 10, 40);
-    text('sleeping: ' + bird.sleeping , 10, 60);
+        text('vel.y: ' + bird.vel.y.toFixed(2), 10, 20);
+        text('isMoving: ' + bird.isMoving, 10, 40);
+        text('sleeping: ' + bird.sleeping , 10, 60);
 
-    if (bird.collides(pipeGroup) || bird.collides(floor)){
-        gameOverLabel = new Sprite(width / 2, height / 2, 192, 42);
-        gameOverLabel.img = gameOverImg;
-        gameOverLabel.layer = 100;
-        gameOverLabel.x = camera.x;
+        if (bird.collides(pipeGroup) || bird.collides(floor)){
+            gameOverLabel = new Sprite(width / 2, height / 2, 192, 42);
+            gameOverLabel.img = gameOverImg;
+            gameOverLabel.layer = 100;
+            gameOverLabel.x = camera.x;
 
-        noLoop();
-    }
+            noLoop();
+        }
     }
 
 
