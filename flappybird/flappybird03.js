@@ -103,6 +103,8 @@ function draw() {
         gameOverLabel.img = gameOverImg;
         gameOverLabel.layer = 100;
         gameOverLabel.x = camera.x;
+
+        noLoop();
     }
 
 
