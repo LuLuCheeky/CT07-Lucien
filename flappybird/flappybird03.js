@@ -27,7 +27,7 @@ function preload() {
     startScreenImg = loadImage("assets/message.png");
 
     for (let i = 0; i < 10; i++){
-        number
+        numberImages[i] = loadImage()
     } 
 }
 
