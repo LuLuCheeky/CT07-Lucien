@@ -133,7 +133,7 @@ function spawnPipePair(){
   // fill in this code later
    // control the gap and height of the top and bottom pipe
     let gap = 50;
-    let midY = random(250, height - 275);
+    let midY = random(250, height - 270);
 
   // create the top pipe
     topPipe = new Sprite(bird.x + 400, midY - gap / 2 - 150, 52, 320, 'static');
