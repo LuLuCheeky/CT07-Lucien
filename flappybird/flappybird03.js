@@ -128,7 +128,7 @@ function draw() {
             noLoop();
         }
 
-        drawScore(width/ 2, 20, score, 24, 36)
+        drawScore(width / 2, 20, score, 24, 36)
     }
 
 
@@ -156,5 +156,5 @@ function spawnPipePair(){
 }
 
 function drawScore(x, y, score, digitWidth, digitHeight){
-
+    scoreDigits
 }
