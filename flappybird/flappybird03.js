@@ -33,7 +33,7 @@ function setup() {
   // Bird Sprite construction
     bird = new Sprite();
     bird.x = width / 3;
-    bird.y = 200,
+    bird.y = 180,
     bird.width = 10;
     bird.height = 10;
     bird.img = flapMidImg; // defined earlier in preload()
