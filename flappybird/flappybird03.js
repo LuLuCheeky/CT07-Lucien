@@ -14,12 +14,12 @@ function preload() {
     // bird image, background and the floor
     flapMidImg = loadImage('assets/yellowbird-midflap.png'); 
     // preload images for flap up and down
-    flapUpImg = loadImage('assets/yellowbird-upflap.png');
-    flapDownImg = loadImage('assets/yellowbird-downflap.png')
+    flapUpImg = loadImage("assets/yellowbird-upflap.png");
+    flapDownImg = loadImage("assets/yellowbird-downflap.png");
 
-    pipe = loadImage('assets/pipe-green.png'); // preload image for pipe
+    pipe = loadImage("assets/pipe-green.png"); // preload image for pipe
 
-    bg = loadImage("assets/background-day.png');
+    bg = loadImage("assets/background-day.png");
     base = loadImage("assets/base.png");
 
     gameOverImg = loadImage("assets/gameover.png");
@@ -27,7 +27,7 @@ function preload() {
     startScreenImg = loadImage("assets/message.png");
 
     for (let i = 0; i < 10; i++){
-        numberImages[i] = loadImage("assets/" + i + ".png")
+        numberImages[i] = loadImage("assets/" + i + ".png");
     } 
 }
 
