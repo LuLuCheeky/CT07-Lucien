@@ -127,6 +127,8 @@ function draw() {
 
             noLoop();
         }
+
+        drawScore(wdith/)
     }
 
 
