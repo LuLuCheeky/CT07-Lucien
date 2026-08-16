@@ -114,7 +114,7 @@ function draw() {
             gameOverLabel.layer = 100;
             gameOverLabel.x = camera.x;
 
-            startGame =
+            startGame = "false"
         }
     }
 
