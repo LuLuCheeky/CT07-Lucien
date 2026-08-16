@@ -128,7 +128,7 @@ function draw() {
             noLoop();
         }
 
-        drawScore(wdith/)
+        drawScore(wdith/ 2, 20, score, 24, 36)
     }
 
 
