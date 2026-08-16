@@ -19,8 +19,8 @@ function preload() {
 
     pipe = loadImage('assets/pipe-green.png'); // preload image for pipe
 
-    bg = loadImage('assets/background-day.png');
-    base = loadImage('assets/base.png');
+    bg = loadImage("assets/background-day.png');
+    base = loadImage("assets/base.png");
 
     gameOverImg = loadImage("assets/gameover.png");
 
