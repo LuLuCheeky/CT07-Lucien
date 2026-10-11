@@ -16,7 +16,8 @@ let difficultyNumFruits = 1;
 let lastDifficultyIncrease = 0;
 
 let lives = 3;
-
+let bomb;
+let bombGroup;
 
 function preload(){
   dojoBG =loadImage('assets/dojobackground.png');
@@ -31,6 +32,12 @@ function preload(){
   let watermelon = {
     whole: loadImage('assets/watermelonwhole.png'),
     half1: loadImage('assets/watermelonhalf.png'),
+  }
+
+  bomb = {
+    image: loadImage("assets/fruitninja_bomb.png"),
+    explosion: loadImage("assets/fruitninja_bomb.png"),
+    sound: loadSound("assets/fruitninja_explosion.mp3"),
   }
 
   // store the fruit objects into an array
@@ -107,6 +114,7 @@ function draw(){
         for (let i = 0; i < difficultyNumFruits; i++){
         spawnFruit();
         }
+        spawnBomb();
       
    }
 
@@ -128,7 +136,6 @@ function draw(){
     if (fruit.y > height + 50) {
       fruit.remove();
       missedFruits += 1;
-      lives -= 1;
     }
   }
 
@@ -218,6 +225,15 @@ function splitFruit(x, y, fruitData) {
   right.life = 30; // remove after 30 frames
 }
 
+function spawnBomb() {
+  let bombData = bomb;
+  let bRandomX = random(300, 500);
+  let bombSprite = new bombGroup.Sprite(bRandomX, height + 20, 40);
+  bombSprite.image = bomb.image;
+  bombSprite.vel.y = random(-10, -14);
+  bombSprite.vel.x = random(-2, 2);
+  bombSprite.friction = 0;
+}
 
 // // < . . . PREVIOUS CODE . . . >
 
