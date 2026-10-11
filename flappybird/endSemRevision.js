@@ -19,7 +19,7 @@ function setup() {
 function draw() {
     new Canvas(600, 400);
 
-    image(bgImg, 0, 0, 400, 600);
+    image(bgImg, 300, 200, 400, 600);
 
     bird.x = 300;
 }
