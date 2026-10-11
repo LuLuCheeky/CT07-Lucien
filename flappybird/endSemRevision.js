@@ -11,6 +11,7 @@ function setup() {
     bird = new Sprite;
     bird.img = birdImg;
     bird.collider = "dynamic";
+    bird.layer = 3;
 
     bg = new Sprite;
     bg.img = bgImg;
@@ -23,7 +24,7 @@ function draw() {
     new Canvas(600, 400);
 
     bird.x = 300;
-    
+
     bg.x = 300;
     bg.y = 200;
 }
