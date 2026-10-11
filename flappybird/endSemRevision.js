@@ -1,5 +1,5 @@
 let bird, bg;
 
 function preload() {
-    bird
+    birdImg = loadImage("assets/")
 }
