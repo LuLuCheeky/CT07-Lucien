@@ -110,14 +110,6 @@ function draw(){
   }
 
   // call spawnFruit function 
-   if (frameCount % 120 === 0) {
-        for (let i = 0; i < difficultyNumFruits; i++){
-        spawnFruit();
-        }
-        spawnBomb();
-      
-   }
-
   if (gameTimer - lastDifficultyIncrease >= 15) {
     difficultyNumFruits += 1
     lastDifficultyIncrease = gameTimer
