@@ -21,7 +21,7 @@ function draw() {
 
     bg.x = 300;
     bg.y = 200;
-    Image
+    image(bgImg, )
 
     bird.x = 300;
 }
