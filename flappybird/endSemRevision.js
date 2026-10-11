@@ -10,11 +10,11 @@ function setup() {
 
     bird = new Sprite;
     bird.img = birdImg;
-    bird.collider = "dynamic"
+    bird.collider = "dynamic";
 
     bg = new Sprite;
     bg.img = bgImg;
-    bg
+    bg.collider = "static";
     
     world.gravity.y = 2;
 }
