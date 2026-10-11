@@ -12,7 +12,6 @@ function setup() {
     bird.img = birdImg;
     bird.collider = "dynamic";
 
-    bg = new Sprite;
     bg.img = bgImg;
     bg.collider = "static";
     
