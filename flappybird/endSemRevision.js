@@ -6,7 +6,7 @@ function preload() {
 }
 
 function setup() {
-    new Canvas(600, 400);
+    new Canvas(400, 600);
 
     bird = new Sprite;
     bird.img = birdImg;
@@ -19,7 +19,7 @@ function setup() {
 function draw() {
     new Canvas(400, 600);
 
-    image(bgImg, 0, 0, 600, 400);
+    image(bgImg, 0, 0, 400, 600);
 
     bird.x = 300;
 }
