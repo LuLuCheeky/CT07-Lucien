@@ -164,7 +164,18 @@ function draw(){
   fill(0, 255, 0)
   text("Lives: " + lives, 600, 10)
 }
-D
+
+function spawnFruit(){
+  let fruitData = random(fruitTypes); // pick one at random
+  let randomX = random(300, 500); // random X to spawn
+  let fruit = new fruitGroup.Sprite(randomX, height+20, 40); // spawn at bottom
+  fruit.image = fruitData.whole;
+  fruit.type = fruitData; // store reference to its type
+  fruit.vel.y = random(-10, -14); // shoot upward at random velocity
+  fruit.vel.x = random(-2, 2); // sideways curve
+  fruit.friction = 0; // no friction
+}
+
 
 // Check if any fruit is sliced by the mouse
 function sliceFruit() {
@@ -222,6 +233,18 @@ function spawnBomb() {
   bombSprite.vel.y = random(-10, -14);
   bombSprite.vel.x = random(-2, 2);
   bombSprite.friction = 0;
+}
+
+
+function spawnFruit(){
+  let fruitData = random(fruitTypes); // pick one at random
+  let randomX = random(300, 500); // random X to spawn
+  let fruit = new fruitGroup.Sprite(randomX, height+20, 40); // spawn at bottom
+  fruit.image = fruitData.whole;
+  fruit.type = fruitData; // store reference to its type
+  fruit.vel.y = random(-10, -14); // shoot upward at random velocity
+  fruit.vel.x = random(-2, 2); // sideways curve
+  fruit.friction = 0; // no friction
 }
 
 // // < . . . PREVIOUS CODE . . . >
