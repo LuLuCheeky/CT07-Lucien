@@ -14,4 +14,5 @@ function setup() {
 
 function draw() {
     bird.x = 300;
+    
 }
