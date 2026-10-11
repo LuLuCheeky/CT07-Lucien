@@ -1,1 +1,1 @@
-let bird, 
+let bird, bg, 
