@@ -12,7 +12,7 @@ function setup() {
     bird.img = birdImg;
     bird.collider = "dynamic";
 
-    bg.img = bgImg;
+    bg.image(bg.img);
     bg.collider = "static";
     
     world.gravity.y = 2;
