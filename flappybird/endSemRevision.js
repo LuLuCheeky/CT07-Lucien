@@ -1,5 +1,6 @@
 let bird, bg;
 
 function preload() {
-    birdImg = loadImage("assets/bluebird-midflap.png")
+    birdImg = loadImage("assets/bluebird-midflap.png");
+    bgImg = load
 }
