@@ -9,7 +9,6 @@ function setup() {
     new Canvas(600, 400);
 
     bird = new Sprite;
-    bird.x = 300;
     bird.img = birdImg;
 }
 
