@@ -23,6 +23,6 @@ function draw() {
     bird.x = 200;
 
     if (mouse.presses()){
-        bird.y += -3;
+        bird.vel.y += -10;
     }
 }
