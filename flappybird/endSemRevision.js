@@ -11,7 +11,6 @@ function setup() {
     bird = new Sprite;
     bird.img = birdImg;
     bird.collider = "dynamic";
-    bird.layer = 100;
 
     bg = new Sprite;
     bg.img = bgImg;
