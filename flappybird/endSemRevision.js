@@ -24,7 +24,5 @@ function draw() {
 
     if (mouse.presses()){
         bird.vel.y += -2;
-    } else {
-        bird.vel.y += 0.5;
     }
 }
