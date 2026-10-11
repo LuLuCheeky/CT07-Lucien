@@ -11,12 +11,14 @@ function setup() {
     bird = new Sprite;
     bird.img = birdImg;
     bird.collider = "dynamic"
+
+    
     
     world.gravity.y = 2;
 }
 
 function draw() {
-        new Canvas(600, 400);
+    new Canvas(600, 400);
     bird.x = 300;
 
 }
