@@ -12,3 +12,7 @@ function setup() {
     bird.x = 300;
     bird.img = birdImg;
 }
+
+function draw() {
+    bird.x = 300;
+}
