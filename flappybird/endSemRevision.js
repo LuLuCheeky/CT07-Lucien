@@ -10,9 +10,11 @@ function setup() {
 
     bird = new Sprite;
     bird.img = birdImg;
+    
+    world.gravity.y = 2
 }
 
 function draw() {
     bird.x = 300;
-    
+
 }
