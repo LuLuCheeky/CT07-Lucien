@@ -22,5 +22,7 @@ function draw() {
 
     bird.x = 200;
 
-    if (mouse.presses){}
+    if (mouse.presses){
+        bird
+    }
 }
