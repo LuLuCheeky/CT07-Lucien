@@ -12,8 +12,6 @@ function setup() {
     bird.img = birdImg;
     bird.collider = "dynamic";
 
-
-   bg.collider = "static";
     
     world.gravity.y = 2;
 }
@@ -21,8 +19,7 @@ function setup() {
 function draw() {
     new Canvas(600, 400);
 
-    bg.x = 300;
-    bg.y = 200;
+    bg.
 
     bird.x = 300;
 }
