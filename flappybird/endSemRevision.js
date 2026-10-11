@@ -21,8 +21,10 @@ function draw() {
     image(bgImg, 0, 0, 400, 600);
 
     bird.x = 200;
-    
+
     if (mouse.presses()){
         bird.vel.y += -2;
+    } else {
+        bird.vel.y 
     }
 }
