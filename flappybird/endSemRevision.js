@@ -10,4 +10,5 @@ function setup() {
 
     new Sprite = bird;
     bird.x = 300;
+    bird
 }
