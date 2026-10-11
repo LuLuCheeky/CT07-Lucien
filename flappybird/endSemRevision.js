@@ -1,1 +1,5 @@
-let bird, bg, 
+let bird, bg;
+
+function preload() {
+    
+}
