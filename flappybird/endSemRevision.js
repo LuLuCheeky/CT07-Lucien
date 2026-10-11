@@ -22,5 +22,5 @@ function setup() {
 function draw() {
     new Canvas(600, 400);
     bird.x = 300;
-
+    bg.x = 
 }
