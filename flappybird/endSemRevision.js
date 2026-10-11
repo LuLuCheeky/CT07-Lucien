@@ -5,3 +5,6 @@ function preload() {
     bgImg = loadImage("assets/background-night.png");
 }
 
+function setup() {
+    newCanvas
+}
