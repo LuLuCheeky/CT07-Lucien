@@ -18,6 +18,7 @@ let lastDifficultyIncrease = 0;
 let lives = 3;
 let bomb;
 let bombGroup;
+let colour;
 
 function preload(){
   dojoBG =loadImage('assets/dojobackground.png');
