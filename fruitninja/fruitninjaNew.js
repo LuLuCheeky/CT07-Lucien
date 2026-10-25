@@ -28,6 +28,7 @@ function preload(){
   let peach = {
     whole: loadImage('assets/peachwhole.png'),
     half1: loadImage('assets/peachhalf.png'),
+    half2: loadImage()
   };
 
   // declare the watermelon object
