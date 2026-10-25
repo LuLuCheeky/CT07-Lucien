@@ -161,7 +161,7 @@ function draw(){
   fill(0, 255, 0)
   text("Lives: " + lives, 600, 10)
 
-  if (frameCount % 120 === 0 && g) {
+  if (frameCount % 120 === 0 && gameState) {
     spawnBomb();
     for (let i = 0; i < difficultyNumFruits; i++) {
       spawnFruit();
