@@ -263,7 +263,7 @@ function sliceBomb() {
       explosion.collider = "kinematic"
       explosion.x = bx;
       explosion.y = by;
-      explosion.life = 60;
+      explosion.life = 30;
       bomb.sound.play();
 
 
