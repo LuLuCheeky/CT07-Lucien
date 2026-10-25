@@ -199,6 +199,7 @@ function draw(){
 }
 
 function spawnFruit(){
+  chance = random(0, 2)
   let fruitData = random(fruitTypes); // pick one at random
   let randomX = random(300, 500); // random X to spawn
   let fruit = new fruitGroup.Sprite(randomX, height + 20, 40); // spawn at bottom
