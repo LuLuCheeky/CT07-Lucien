@@ -211,7 +211,8 @@ function spawnFruit(){
     fruit.friction = 0; // no friction
   } else if (chance === 2) {
     let fruitData = fruitTypes[timeFruit];
-        let randomX = random(300, 500); //
+    let randomX = random(300, 500); 
+    let fruit = new fruitGroup.Sprite(randomX, height + 20, 40); 
   }
 }
 
