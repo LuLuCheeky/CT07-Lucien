@@ -224,6 +224,7 @@ function sliceFruit() {
       sliceSound.play();
 
       let splatter = new Sprite();
+      splatter.img = fruitData.
 
       splitFruit(fx, fy, fruit.type); // spawn halves
       score += 1 // increase score by 1
