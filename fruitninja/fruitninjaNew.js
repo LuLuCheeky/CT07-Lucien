@@ -260,6 +260,7 @@ function sliceBomb() {
       bomb.explosion.visible = true;
       bomb.explosion.x = bx;
       bomb.explosion.y = by;
+      
 
       lives -= 1 // increase score by 1
       
