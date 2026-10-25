@@ -232,13 +232,3 @@ function spawnBomb() {
 }
 
 
-function spawnFruit(){
-  let fruitData = random(fruitTypes); // pick one at random
-  let randomX = random(300, 500); // random X to spawn
-  let fruit = new fruitGroup.Sprite(randomX, height+20, 40); // spawn at bottom
-  fruit.image = fruitData.whole;
-  fruit.type = fruitData; // store reference to its type
-  fruit.vel.y = random(-10, -14); // shoot upward at random velocity
-  fruit.vel.x = random(-2, 2); // sideways curve
-  fruit.friction = 0; // no friction
-}
