@@ -255,6 +255,8 @@ function sliceFruit() {
         break; // only slice one fruit per frame
       }
     }
+  } else if (chance === 2) {
+    
   }
 
 }
