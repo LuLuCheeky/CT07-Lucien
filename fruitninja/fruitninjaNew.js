@@ -175,8 +175,6 @@ function spawnFruit(){
   fruit.vel.y = random(-10, -14); // shoot upward at random velocity
   fruit.vel.x = random(-2, 2); // sideways curve
   fruit.friction = 0; // no friction
-  fruit.width = 1;
-  fruit.height = 1;
 }
 
 
@@ -236,8 +234,6 @@ function spawnBomb() {
   bombSprite.vel.y = random(-10, -14);
   bombSprite.vel.x = random(-2, 2);
   bombSprite.friction = 0;
-  bombSprite.height = 1; 
-  bombSprite.width = 1;
 }
 
 
