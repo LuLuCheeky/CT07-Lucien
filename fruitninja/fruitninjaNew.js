@@ -204,7 +204,7 @@ function spawnFruit(){
 
 
 // Check if any fruit is sliced by the mouse
-function sliceFruit() {
+function sliceFruit(fruitData) {
   // if (!mouse.pressing()) return;
   for (let fruit of fruitGroup) {
     if (fruit.sliced){
