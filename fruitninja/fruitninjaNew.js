@@ -47,6 +47,10 @@ function preload(){
     sound: loadSound("assets/fruitninja_explosion.mp3"),
   }
 
+  timeFruit = {
+    image: loadImage()
+  }
+
   // store the fruit objects into an array
   fruitTypes = [peach, watermelon];
 
