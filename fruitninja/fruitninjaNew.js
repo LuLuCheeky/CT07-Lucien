@@ -19,7 +19,7 @@ let lives = 3;
 let bomb;
 let bombGroup;
 let explosion;
-let 
+let kaboom;
 
 let colour;
 
