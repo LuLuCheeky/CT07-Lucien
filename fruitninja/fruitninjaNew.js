@@ -255,8 +255,7 @@ function sliceBomb() {
       bombSprite.remove(); // remove whole fruit
       explosion.play();
 
-      splitFruit(fx, fy, fruit.type); // spawn halves
-      score += 1 // increase score by 1
+      lives -= 1 // increase score by 1
       
       break; // only slice one fruit per frame
     }
