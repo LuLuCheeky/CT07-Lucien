@@ -125,6 +125,7 @@ function draw(){
     trail.color = "red";
     trail.life = 10;
     sliceFruit();
+    sliceBomb();
   }
 
     // Remove fruits that fall below the screen, count as missed
