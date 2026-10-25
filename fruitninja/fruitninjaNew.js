@@ -264,6 +264,7 @@ function sliceBomb() {
       bombSprite.remove(); // remove whole fruit
       explosion = new Sprite();
       explosion.img = bomb.explosion;
+      explosion.collider = "kinematic"
 
 
       lives -= 1 // increase score by 1
