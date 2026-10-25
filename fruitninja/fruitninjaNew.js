@@ -256,7 +256,7 @@ function sliceBomb() {
       bomb.sound.play();
       bomb.explosion.visible = true;
       bomb.explosion.x = bx;
-      bob
+      bomb.explosion.y = by;
 
       lives -= 1 // increase score by 1
       
