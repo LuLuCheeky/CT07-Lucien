@@ -38,7 +38,7 @@ function preload(){
     half1: loadImage('assets/watermelonhalf.png'),
   }
 
-  bomb = {
+  let bomb = {
     image: loadImage("assets/fruitninja_bomb.png"),
     explosion: loadImage("assets/fruitninja_bomb.png"),
     sound: loadSound("assets/fruitninja_explosion.mp3"),
