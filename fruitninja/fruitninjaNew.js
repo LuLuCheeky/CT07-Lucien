@@ -169,6 +169,8 @@ function draw(){
     colour1 = 225;
     colour2 = 175;
     colour3 = 0;
+  } else if (lives === 1) {
+    colour1 = 
   }
   fill(0, 255, 0)
   text("Lives: " + lives, 600, 10)
