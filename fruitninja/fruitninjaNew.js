@@ -125,7 +125,7 @@ function draw(){
     // Handle slicing when mouse is pressed
   if (mouse.pressing()){
     trail = new Sprite(mouse.x, mouse.y, 7);
-    trail.collider = 'static';
+    trail.collider = 'none';
     trail.color = "red";
     trail.life = 10;
     sliceFruit();
