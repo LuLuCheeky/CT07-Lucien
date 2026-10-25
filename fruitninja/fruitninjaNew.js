@@ -249,8 +249,8 @@ function sliceBomb() {
     if (d < ((fruit.d / 2) + 5)) {
       bombSprite.sliced = true; // prevent repeat slicing
 
-      const fx = bomb.x;
-      const fy = bombSprite.y;
+      const bx = bombSprite.x;
+      const by = bombSprite.y;
 
       bombSprite.remove(); // remove whole fruit
       explosion.play();
