@@ -38,7 +38,7 @@ function preload(){
 
   bomb = {
     image: loadImage("assets/fruitninja_bomb.png"),
-    explosion: loadImage("assets/fruitninja_.png"),
+    explosion: loadImage("assets/fruitninja_bombExplosion.png"),
     sound: loadSound("assets/fruitninja_explosion.mp3"),
   }
 
