@@ -36,6 +36,7 @@ function preload(){
   let watermelon = {
     whole: loadImage('assets/watermelonwhole.png'),
     half1: loadImage('assets/watermelonhalf.png'),
+    splatter: loadImage("assets/watermelon")
   }
 
   bomb = {
