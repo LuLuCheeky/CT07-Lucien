@@ -237,7 +237,6 @@ function splitFruit(x, y, fruitData) {
 }
 
 function spawnBomb() {
-  let bombData = bomb;
   let bRandomX = random(300, 500);
   let bombSprite = new bombGroup.Sprite(bRandomX, height + 20, 40);
   bombSprite.image = bomb.image;
@@ -264,8 +263,7 @@ function sliceBomb() {
 
       bombSprite.remove(); // remove whole fruit
       bomb.sound.play();
-      bomb.explosion.visible = true;
-      bomb.explosion.x = bx;
+      bomb.explosion.visible = true;      bomb.explosion.x = bx;
       bomb.explosion.y = by;
 
 
