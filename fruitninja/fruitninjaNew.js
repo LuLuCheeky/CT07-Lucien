@@ -19,7 +19,7 @@ let lives = 3;
 let bomb;
 let bombGroup;
 
-let colour;
+let colour1, colour2, colour3;
 
 function preload(){
   dojoBG =loadImage('assets/dojobackground.png');
@@ -162,7 +162,7 @@ function draw(){
   }
 
   if (lives === 3){
-      colour 
+      colour1
   }
   fill(0, 255, 0)
   text("Lives: " + lives, 600, 10)
