@@ -159,10 +159,10 @@ function draw(){
   text("Lives: " + lives, 600, 10)
 
   if (frameCount % 120 === 0) {
-    spawnBomb()
+    spawnBomb();
   }
   for (let i = 0; difficultyNumFruits; i++) {
-    spawn
+    spawnFruit();
   }
 }
 
