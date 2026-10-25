@@ -226,12 +226,12 @@ function spawnFruit(){
 function sliceFruit() {
   if (chance === 1) {
       for (let fruit of fruitGroup) {
-    if (fruit.sliced){
-      continue; // skip already sliced fruits
-    } 
+        if (fruit.sliced){
+          continue; // skip already sliced fruits
+        } 
 
     // calculate distance between mouse and fruit
-    let d = dist(mouse.x, mouse.y, fruit.x, fruit.y); 
+      let d = dist(mouse.x, mouse.y, fruit.x, fruit.y); 
 
     if (d < ((fruit.d / 2) + 5)) {
       fruit.sliced = true; // prevent repeat slicing
