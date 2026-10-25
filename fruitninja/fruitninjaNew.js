@@ -18,8 +18,6 @@ let lastDifficultyIncrease = 0;
 let lives = 3;
 let bomb;
 let bombGroup;
-let explosion;
-let kaboom;
 
 let colour;
 
@@ -260,7 +258,7 @@ function sliceBomb() {
       const by = bombSprite.y;
 
       bombSprite.remove(); // remove whole fruit
-      explosion = new Sprite();
+      let explosion = new Sprite();
       explosion.img = bomb.explosion;
       explosion.collider = "kinematic"
       explosion.x = bx;
