@@ -156,7 +156,9 @@ function draw(){
   fill(0, 255, 0)
   text("Lives: " + lives, 600, 10)
 
-  if (frameCount % 120 === 0)
+  if (frameCount % 120 === 0) {
+    spawnBomb()
+  }
 }
 
 function spawnFruit(){
