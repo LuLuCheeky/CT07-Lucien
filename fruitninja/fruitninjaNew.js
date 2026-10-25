@@ -161,7 +161,7 @@ function draw(){
   fill(0, 255, 0)
   text("Lives: " + lives, 600, 10)
 
-  if (frameCount % 120 === 0) {
+  if (frameCount % 120 === 0 && g) {
     spawnBomb();
     for (let i = 0; i < difficultyNumFruits; i++) {
       spawnFruit();
@@ -260,7 +260,7 @@ function sliceBomb() {
       bomb.explosion.visible = true;
       bomb.explosion.x = bx;
       bomb.explosion.y = by;
-      
+
 
       lives -= 1 // increase score by 1
       
