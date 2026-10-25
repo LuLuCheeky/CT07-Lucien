@@ -265,6 +265,7 @@ function sliceBomb() {
       explosion.collider = "kinematic"
       explosion.x = bx;
       explosion.y = by;
+      explosion.life = 
 
 
       lives -= 1 // increase score by 1
