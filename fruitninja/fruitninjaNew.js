@@ -223,6 +223,8 @@ function sliceFruit() {
       fruit.remove(); // remove whole fruit
       sliceSound.play();
 
+      let splatter 
+
       splitFruit(fx, fy, fruit.type); // spawn halves
       score += 1 // increase score by 1
       
