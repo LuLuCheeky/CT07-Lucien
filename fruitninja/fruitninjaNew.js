@@ -238,22 +238,3 @@ function spawnFruit(){
   fruit.vel.x = random(-2, 2); // sideways curve
   fruit.friction = 0; // no friction
 }
-
-// // < . . . PREVIOUS CODE . . . >
-
-// function draw(){
-//   clear(); // optional to clear before applying an image.
-//   image(dojoBG, 0, 0, width, height);
-
-//   // < . . . Put this code at the top after drawing background. . . >
-//   // Place this at the start of your draw() function
-//   if ((kb.presses(' ') || mouse.presses()) && (gameState === 'start')) {
-//     gameState = 'play';
-//     score = 0;
-//     missedFruits = 0;
-//     fruitGroup.removeAll();
-//     fruitHalves.removeAll();
-//   }
-  
-//   // < . . . PREVIOUS CODE . . . >
-// }
