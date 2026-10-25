@@ -254,6 +254,7 @@ function sliceBomb() {
 
       bombSprite.remove(); // remove whole fruit
       bomb.sound.play();
+      bomb.explosion
 
       lives -= 1 // increase score by 1
       
