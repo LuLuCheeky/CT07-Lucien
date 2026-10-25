@@ -213,6 +213,7 @@ function spawnFruit(){
     let fruitData = fruitTypes[timeFruit];
     let randomX = random(300, 500); 
     let fruit = new fruitGroup.Sprite(randomX, height + 20, 40); 
+    f
   }
 }
 
