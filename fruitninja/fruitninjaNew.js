@@ -210,7 +210,7 @@ function spawnFruit(){
     fruit.vel.x = random(-2, 2); // sideways curve
     fruit.friction = 0; // no friction
   } else if (chance === 2) {
-    let 
+    let fruitData = timeFruit
   }
 }
 
