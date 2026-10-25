@@ -247,7 +247,7 @@ function sliceBomb() {
     let d = dist(mouse.x, mouse.y, bombSprite.x, bombSprite.y); 
 
     if (d < ((fruit.d / 2) + 5)) {
-      fruit.sliced = true; // prevent repeat slicing
+      bombSprite.sliced = true; // prevent repeat slicing
 
       const fx = fruit.x;
       const fy = fruit.y;
