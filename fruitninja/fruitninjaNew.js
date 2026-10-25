@@ -170,9 +170,11 @@ function draw(){
     colour2 = 175;
     colour3 = 0;
   } else if (lives === 1) {
-    colour1 = 
+    colour1 = 225;
+    colour2 = 0;
+    colour3 = 0;
   }
-  fill(0, 255, 0)
+  fill(colour1, 255, 0)
   text("Lives: " + lives, 600, 10)
 
   if (frameCount % 120 === 0) {
