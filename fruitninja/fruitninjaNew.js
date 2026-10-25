@@ -199,7 +199,7 @@ function draw(){
 }
 
 function spawnFruit(){
-  chance = random(0, 2)
+  chance = random(1, 2)
   if (chance === 1) {
     let fruitData = random(fruitTypes); // pick one at random
     let randomX = random(300, 500); // random X to spawn
@@ -217,6 +217,7 @@ function spawnFruit(){
     fruit.type = fruitData;
     fruit.vel.y = random(-10, -14);
     fruit.vel.x = random(-2, 2);
+    fruit.friction = 0;
   }
 }
 
