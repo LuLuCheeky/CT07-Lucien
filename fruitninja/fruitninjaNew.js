@@ -58,8 +58,8 @@ function setup(){
 
   bombGroup = new Group()
 
-  backgroundTrack.setVolume(0.5);
-  bomb.sound.setVolume(2);
+  backgroundTrack.setVolume(0.35);
+  bomb.sound.setVolume(100);
 }
 
 function draw(){
