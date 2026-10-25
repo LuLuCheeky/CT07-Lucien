@@ -258,7 +258,7 @@ function sliceBomb() {
       const by = bombSprite.y;
 
       bombSprite.remove(); // remove whole fruit
-      let explosion = new Sprite(bx, by, 60);
+      let explosion = new Sprite();
       explosion.img = bomb.explosion;
       explosion.collider = "kinematic"
       explosion.x = bx;
