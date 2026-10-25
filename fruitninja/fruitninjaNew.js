@@ -51,7 +51,7 @@ function preload(){
     image: loadImage("assets/fruitninja_clock.png"),
     half1: loadImage("assets/fruitninja_clockHalf1.png"),
     half2: loadImage("assets/fruitninja_clockHalf2.png"),
-    splatter:
+    splatter: loadImage("assets/fruitninja_star.png")
   }
 
   // store the fruit objects into an array
