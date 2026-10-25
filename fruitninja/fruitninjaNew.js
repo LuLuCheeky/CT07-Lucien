@@ -58,6 +58,7 @@ function setup(){
 
   bombGroup = new Group()
 
+  backgroundTrack.setVolume(0.)
   bomb.sound.setVolume(2);
 }
 
