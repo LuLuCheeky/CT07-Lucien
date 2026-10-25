@@ -265,6 +265,8 @@ function sliceBomb() {
       explosion = new Sprite();
       explosion.img = bomb.explosion;
       explosion.collider = "kinematic"
+      explosion.x = bx;
+      explosion.y = by;
 
 
       lives -= 1 // increase score by 1
