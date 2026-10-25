@@ -233,14 +233,14 @@ function sliceFruit() {
     // calculate distance between mouse and fruit
       let d = dist(mouse.x, mouse.y, fruit.x, fruit.y); 
 
-    if (d < ((fruit.d / 2) + 5)) {
-      fruit.sliced = true; // prevent repeat slicing
+      if (d < ((fruit.d / 2) + 5)) {
+        fruit.sliced = true; // prevent repeat slicing
 
-      const fx = fruit.x;
-      const fy = fruit.y;
+        const fx = fruit.x;
+        const fy = fruit.y;
 
-      fruit.remove(); // remove whole fruit
-      sliceSound.play();
+        fruit.remove(); // remove whole fruit
+        sliceSound.play();
 
       let splatterSprite = new Sprite();
       splatterSprite.img = fruit.type.splatter;
