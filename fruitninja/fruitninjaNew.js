@@ -48,7 +48,7 @@ function preload(){
   }
 
   timeFruit = {
-    image: loadImage("assets/fruitninja_time")
+    image: loadImage("assets/fruitninja_clock.png")
   }
 
   // store the fruit objects into an array
