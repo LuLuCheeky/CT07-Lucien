@@ -21,6 +21,7 @@ let bombGroup;
 
 let colour1, colour2, colour3;
 
+
 function preload(){
   dojoBG =loadImage('assets/dojobackground.png');
 
