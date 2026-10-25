@@ -174,8 +174,8 @@ function draw(){
     colour2 = 0;
     colour3 = 0;
   }
-  fill(colour1, 255, 0)
-  text("Lives: " + lives, 600, 10)
+  fill(colour1, colour2, colour3);
+  text("Lives: " + lives, 600, 10);
 
   if (frameCount % 120 === 0) {
     spawnBomb();
