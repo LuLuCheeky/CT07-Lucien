@@ -247,7 +247,7 @@ function sliceBomb() {
     } 
 
     // calculate distance between mouse and fruit
-    let d = dist(mouse.x, mouse.y, bombSprite.x, bombSprite.y); 
+    let bombD = dist(mouse.x, mouse.y, bombSprite.x, bombSprite.y); 
 
     if (d < ((fruit.d / 2) + 5)) {
       bombSprite.sliced = true; // prevent repeat slicing
