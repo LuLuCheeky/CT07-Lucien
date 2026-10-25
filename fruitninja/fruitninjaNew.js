@@ -252,7 +252,7 @@ function sliceBomb() {
       const fx = fruit.x;
       const fy = fruit.y;
 
-      fruit.remove(); // remove whole fruit
+      bombSprite.remove(); // remove whole fruit
       sliceSound.play();
 
       splitFruit(fx, fy, fruit.type); // spawn halves
