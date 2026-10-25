@@ -201,7 +201,7 @@ function draw(){
 function spawnFruit(){
   chance = random(0, 2)
   if (chance === 1) {
-      let fruitData = random(fruitTypes); // pick one at random
+    let fruitData = random(fruitTypes); // pick one at random
     let randomX = random(300, 500); // random X to spawn
     let fruit = new fruitGroup.Sprite(randomX, height + 20, 40); // spawn at bottom
     fruit.image = fruitData.whole;
@@ -210,7 +210,7 @@ function spawnFruit(){
     fruit.vel.x = random(-2, 2); // sideways curve
     fruit.friction = 0; // no friction
   } else if (chance === 2) {
-    
+    let 
   }
 }
 
