@@ -155,6 +155,8 @@ function draw(){
 
   fill(0, 255, 0)
   text("Lives: " + lives, 600, 10)
+
+  
 }
 
 function spawnFruit(){
