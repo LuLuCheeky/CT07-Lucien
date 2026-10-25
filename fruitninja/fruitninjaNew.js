@@ -160,7 +160,7 @@ function draw(){
 
   if (frameCount % 120 === 0) {
     spawnBomb();
-    for (let i = 0; difficultyNumFruits; i++) {
+    for (let i = 0; i > difficultyNumFruits; i++) {
       spawnFruit();
     }
   }
