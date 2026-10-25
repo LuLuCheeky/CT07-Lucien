@@ -162,7 +162,7 @@ function draw(){
   }
 
   if (lives === 3){
-
+      colour 
   }
   fill(0, 255, 0)
   text("Lives: " + lives, 600, 10)
