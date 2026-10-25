@@ -240,8 +240,8 @@ function spawnBomb() {
 
 function sliceBomb() {
   // if (!mouse.pressing()) return;
-  for (let bomb of bombGroup) {
-    if (fruit.sliced){
+  for (let bombSprite of bombGroup) {
+    if (bombSprite.sliced){
       continue; // skip already sliced fruits
     } 
 
