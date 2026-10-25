@@ -224,7 +224,7 @@ function sliceFruit(fruitData) {
       sliceSound.play();
 
       let splatterSprite = new Sprite();
-      splatterSprite.img = fruitData.splatter;
+      splatterSprite.img = fruit.type.splatter;
       splatterSprite.x = fx;
       splatterSprite.y = fy;
       splatterSprite.life = 30;
