@@ -253,7 +253,7 @@ function sliceBomb() {
       const by = bombSprite.y;
 
       bombSprite.remove(); // remove whole fruit
-      explosion.play();
+      bomb.sound.play();
 
       lives -= 1 // increase score by 1
       
