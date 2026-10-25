@@ -58,7 +58,7 @@ function setup(){
 
   bombGroup = new Group()
 
-  bomb.sound 
+  bomb.sound.setVolume(2);
 }
 
 function draw(){
