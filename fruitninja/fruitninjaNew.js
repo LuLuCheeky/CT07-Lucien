@@ -228,7 +228,7 @@ function sliceFruit() {
       splatterSprite.x = fx;
       splatterSprite.y = fy;
       splatterSprite.life = 30;
-      splatterSprite.collider = 
+      splatterSprite.collider = "kinematic";
 
       splitFruit(fx, fy, fruit.type); // spawn halves
       score += 1 // increase score by 1
