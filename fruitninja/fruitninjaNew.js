@@ -223,9 +223,9 @@ function sliceFruit() {
       fruit.remove(); // remove whole fruit
       sliceSound.play();
 
-      let splatter = new Sprite();
-      splatter.img = fruitData.splatter;
-      splatter.x = fx;
+      let splatterSprite = new Sprite();
+      splatterSprite.img = fruitData.splatter;
+      splatterSprite.x = fx;
       splatter.y = fy;
       splatter.life = 30;
 
