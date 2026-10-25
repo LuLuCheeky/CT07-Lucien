@@ -236,7 +236,7 @@ function spawnBomb() {
   bombSprite.friction = 0;
 }
 
-function sliceFruit() {
+function sliceBomb() {
   // if (!mouse.pressing()) return;
   for (let fruit of fruitGroup) {
     if (fruit.sliced){
