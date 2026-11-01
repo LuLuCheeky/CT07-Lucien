@@ -215,7 +215,7 @@ function spawnFruit(chance){
     fruit.vel.x = random(-2, 2); // sideways curve
     fruit.friction = 0; // no friction
   } else if (chance === 2) {
-    cm
+    console.log("time")
     let fruitData = fruitTypes[timeFruit];
     let randomX = random(300, 500); 
     let fruit = new fruitGroup.Sprite(randomX, height + 20, 40); 
