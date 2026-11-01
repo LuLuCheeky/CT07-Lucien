@@ -246,7 +246,14 @@ function sliceFruit(chance) {
 
         fruit.remove(); // remove whole fruit
         sliceSound.play();
-        
+
+        let splatterSprite = new Sprite();
+        splatterSprite.img = fruit.type.splatter;
+        splatterSprite.x = fx;
+        splatterSprite.y = fy;
+        splatterSprite.life = 30;
+        splatterSprite.collider = "kinematic";
+
         splitFruit(fx, fy, fruit.type); // spawn halves
         score += 1 // increase score by 1
       
