@@ -19,7 +19,7 @@ let lives = 3;
 let bomb;
 let bombGroup;
 let chance;
-let finalScore, finalMissedFruits;
+let finalScore, finalMissedFruits, total;
 
 let colour1, colour2, colour3;
 
@@ -79,6 +79,7 @@ function setup(){
 
   finalScore = 0;
   finalMissedFruit = 0;
+  total = 0;
 }
 
 function draw(){
