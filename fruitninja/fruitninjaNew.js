@@ -132,6 +132,7 @@ function draw(){
     fill(255);
     finalScore = score * 100;
     finalMissedFruits = missedFruits * 50;
+    fi
     text("Fruit score: " + score, "x 100 = ", Finalscore, width / 2, height / 2);
     text("Missed fruits penalty: " + missedFruits, "x 50 = ", FinalmissedFruits, width / 2, height / 2 + 40);
     fill(0, 225, 0)
