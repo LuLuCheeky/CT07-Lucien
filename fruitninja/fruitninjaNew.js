@@ -250,11 +250,11 @@ function sliceFruit() {
           splatterSprite.life = 30;
           splatterSprite.collider = "kinematic";
 
-        splitFruit(fx, fy, fruit.type); // spawn halves
-        score += 1 // increase score by 1
+          splitFruit(fx, fy, fruit.type); // spawn halves
+          score += 1 // increase score by 1
       
-        break; // only slice one fruit per frame
-      }
+          break; // only slice one fruit per frame
+        }
     }
   } else if (chance === 2) {
     for (let fruit of fruitGroup) {
