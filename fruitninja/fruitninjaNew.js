@@ -204,7 +204,7 @@ function draw(){
 
 function spawnFruit(chance){
   if (chance === 1) {
-    console.log("fruit")
+    console.log("fruit");
     let fruitData = random(fruitTypes); // pick one at random
     let randomX = random(300, 500); // random X to spawn
     let fruit = new fruitGroup.Sprite(randomX, height + 20, 40); // spawn at bottom
@@ -215,7 +215,7 @@ function spawnFruit(chance){
     fruit.friction = 0; // no friction
     console.log(fruitTypes)
   } else if (chance === 2) {
-    console.log("time")
+    console.log("time");
     let fruitData = fruitTypes[timeFruit];
     let randomX = random(300, 500); 
     let fruit = new fruitGroup.Sprite(randomX, height + 20, 40); 
