@@ -305,6 +305,24 @@ function splitFruit(x, y, fruitData) {
   right.life = 30; // remove after 30 frames
 }
 
+function splitFruit(x, y, fruitData) {
+  // Create left half
+  let left = new fruitHalves.Sprite(x - 10, y, 40, 40);
+  left.img = fruitData.half1;
+  left.vel.x = -3; // veer left
+  left.vel.y = random(-5, -2);
+  left.rotationSpeed = -5;
+  left.life = 30; // remove after 30 frames
+
+  // Create right half
+  let right = new fruitHalves.Sprite(x + 10, y, 40, 40);
+  right.img = fruitData.half2;
+  right.vel.x = 3; // veer right
+  right.vel.y = random(-5, -2);
+  right.rotationSpeed = 5;
+  right.life = 30; // remove after 30 frames
+}
+
 function spawnBomb() {
   let bRandomX = random(300, 500);
   let bombSprite = new bombGroup.Sprite(bRandomX, height + 20, 40);
