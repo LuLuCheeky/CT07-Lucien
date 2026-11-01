@@ -18,6 +18,7 @@ let lastDifficultyIncrease = 0;
 let lives = 3;
 let bomb;
 let bombGroup;
+let chance;
 
 let colour1, colour2, colour3;
 
