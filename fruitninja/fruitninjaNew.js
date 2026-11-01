@@ -308,7 +308,7 @@ function splitFruit(x, y, fruitData) {
 function splitTime(x, y, fruitData) {
   // Create left half
   let left = new fruitHalves.Sprite(x - 10, y, 40, 40);
-  left.img = fruitData.half1;
+  left.img = timeFruit.half1;
   left.vel.x = -3; // veer left
   left.vel.y = random(-5, -2);
   left.rotationSpeed = -5;
@@ -316,7 +316,7 @@ function splitTime(x, y, fruitData) {
 
   // Create right half
   let right = new fruitHalves.Sprite(x + 10, y, 40, 40);
-  right.img = fruitData.half2;
+  right.img = timeFruit.half2;
   right.vel.x = 3; // veer right
   right.vel.y = random(-5, -2);
   right.rotationSpeed = 5;
