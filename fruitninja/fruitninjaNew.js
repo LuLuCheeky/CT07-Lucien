@@ -126,9 +126,9 @@ function draw(){
     textSize(24);
     fill(255);
     text("Fruit score: " + score, "x 100 = ", score * 100, width / 2, height / 2);
-    text("Missed fruits penalty: " + missedFruits, "x 100 = ", missedFruits *100, width / 2, height / 2 + 40);
+    text("Missed fruits penalty: " + missedFruits, "x 50 = ", missedFruits *100, width / 2, height / 2 + 40);
     fill(0, 225, 0)
-    text("Final score: ", score * 100, missedFruits * 100, " x ", (score * 100) - (missedFruits * 100), width / 2, height / 2 + 90)
+    text("Final score: ", score * 100, missedFruits * 50, " x ", (score * 100) - (missedFruits * 100), width / 2, height / 2 + 90)
     text("Press space or click to restart.", width / 2, height / 2 + 120);
     backgroundTrack.stop();
     return;
