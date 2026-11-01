@@ -277,7 +277,7 @@ function sliceFruit(chance) {
         fruit.remove(); // remove whole fruit
         sliceSound.play();
 
-        splitFruit(fx, fy, fruit.type); // spawn halves
+        splitTime(fx, fy, fruit.type); // spawn halves
         score += 1 // increase score by 1
       
         break; // only slice one fruit per frame
