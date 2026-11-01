@@ -334,7 +334,7 @@ function splitTime(x, y, fruitData) {
   right.rotationSpeed = 5;
   right.life = 30; // remove after 30 frames
 
-  gameTimer += 3;
+  gameDuration += 3;
 }
 
 function spawnBomb() {
