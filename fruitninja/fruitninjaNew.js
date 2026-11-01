@@ -226,10 +226,10 @@ function spawnFruit(){
 // Check if any fruit is sliced by the mouse
 function sliceFruit() {
   if (chance === 1) {
-      for (let fruit of fruitGroup) {
-        if (fruit.sliced){
-          continue; // skip already sliced fruits
-        } 
+    for (let fruit of fruitGroup) {
+      if (fruit.sliced){
+        continue; // skip already sliced fruits
+      } 
 
     // calculate distance between mouse and fruit
       let d = dist(mouse.x, mouse.y, fruit.x, fruit.y); 
