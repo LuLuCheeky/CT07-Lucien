@@ -126,7 +126,8 @@ function draw(){
     fill(255);
     text("Fruit score: " + score, "x 100 = ", score * 100, width / 2, height / 2);
     text("Missed fruits penalty: " + missedFruits, "x 100 = ", missedFruits *100, width / 2, height / 2 + 40);
-    fill()
+    fill(0, 225, 0)
+    text("")
     text("Press space or click to restart.", width / 2, height / 2 + 80);
     backgroundTrack.stop();
     return;
