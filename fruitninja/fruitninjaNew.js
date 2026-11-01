@@ -195,7 +195,7 @@ function draw(){
   if (frameCount % 120 === 0) {
     spawnBomb();
     for (let i = 0; i < difficultyNumFruits; i++) {
-      chance = Math.floor(random(1, 2))
+      chance = Math.floor(random(1, 3))
       console.log(chance)
       spawnFruit(chance);
     }
