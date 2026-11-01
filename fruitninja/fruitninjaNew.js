@@ -126,6 +126,7 @@ function draw(){
     text("Game over!", width / 2, height / 2 - 60);
     textSize(24);
     fill(255);
+    final
     text("Fruit score: " + score, "x 100 = ", score * 100, width / 2, height / 2);
     text("Missed fruits penalty: " + missedFruits, "x 50 = ", missedFruits *100, width / 2, height / 2 + 40);
     fill(0, 225, 0)
