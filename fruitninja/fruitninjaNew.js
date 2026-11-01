@@ -202,7 +202,7 @@ function draw(){
 }
 
 function spawnFruit(chance){
-  let chance = random(1, 2)
+  chance = random(1, 2)
   if (chance === 1) {
     let fruitData = random(fruitTypes); // pick one at random
     let randomX = random(300, 500); // random X to spawn
