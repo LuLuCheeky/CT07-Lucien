@@ -124,7 +124,7 @@ function draw(){
     text("Game over!", width / 2, height / 2 - 60);
     textSize(24);
     fill(255);
-    text("Fruit score: " + score, width / 2, height / 2);
+    text("Fruit score: " + score, "x 100 = ", width / 2, height / 2);
     text("Missed fruits: " + missedFruits, width / 2, height / 2 + 40);
     text("Press space or click to restart.", width / 2, height / 2 + 80);
     backgroundTrack.stop();
