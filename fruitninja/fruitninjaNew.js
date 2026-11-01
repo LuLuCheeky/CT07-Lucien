@@ -77,7 +77,8 @@ function setup(){
   backgroundTrack.setVolume(0.35);
   bomb.sound.setVolume(100);
 
-  final
+  finalScore = 0;
+  finalMissedFruit = 0;
 }
 
 function draw(){
