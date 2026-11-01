@@ -141,7 +141,7 @@ function draw(){
     trail.collider = 'none';
     trail.color = "red";
     trail.life = 10;
-    sliceFruit();
+    sliceFruit(chance);
     sliceBomb();
   }
 
