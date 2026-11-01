@@ -134,7 +134,7 @@ function draw(){
     text("Fruit score: " + score, "x 100 = ", Finalscore, width / 2, height / 2);
     text("Missed fruits penalty: " + missedFruits, "x 50 = ", FinalmissedFruits, width / 2, height / 2 + 40);
     fill(0, 225, 0)
-    text("Final score: ", score * 100, missedFruits * 50, " x ", (score * 100) - (missedFruits * 100), width / 2, height / 2 + 90)
+    text("Final score: ", finalScore, finalMissedFruits * 50, " x ", (score * 100) - (missedFruits * 100), width / 2, height / 2 + 90)
     text("Press space or click to restart.", width / 2, height / 2 + 120);
     backgroundTrack.stop();
     return;
@@ -225,10 +225,10 @@ function spawnFruit(chance){
     console.log(fruitData)
   } else if (chance === 2) {
     console.log("time");
-    let fruitData = fruitTypes[timeFruit];
+    let fruitData = timeFruit;
     let randomX = random(300, 500); 
     let fruit = new fruitGroup.Sprite(randomX, height + 20, 40); 
-    fruit.img = timeFruit.image;
+    fruit.img = timeFruit.whole;
     fruit.type = fruitData;
     fruit.vel.y = random(-10, -14);
     fruit.vel.x = random(-2, 2);
