@@ -305,7 +305,7 @@ function splitFruit(x, y, fruitData) {
   right.life = 30; // remove after 30 frames
 }
 
-function splitFruit(x, y, fruitData) {
+function splitTime(x, y, fruitData) {
   // Create left half
   let left = new fruitHalves.Sprite(x - 10, y, 40, 40);
   left.img = fruitData.half1;
