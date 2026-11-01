@@ -279,6 +279,7 @@ function sliceFruit(chance) {
 
         splitTime(fx, fy, fruit.type); // spawn halves
         score += 1 // increase score by 1
+        gameTimer += 3
       
         break; // only slice one fruit per frame
       }
