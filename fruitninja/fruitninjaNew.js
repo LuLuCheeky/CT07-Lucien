@@ -248,7 +248,7 @@ function sliceFruit(chance) {
         sliceSound.play();
 
         let splatterSprite = new Sprite();
-        splatterSprite.img = fruitTypes.splatter;
+        splatterSprite.img = fruit.type.splatter;
         splatterSprite.x = fx;
         splatterSprite.y = fy;
         splatterSprite.life = 30;
