@@ -240,13 +240,13 @@ function sliceFruit() {
           const fx = fruit.x;
           const fy = fruit.y;
 
-          fruit.remove(); // remove whole fruit
-          liceSound.play();
+        fruit.remove(); // remove whole fruit
+        sliceSound.play();
 
-          let splatterSprite = new Sprite();
-          splatterSprite.img = fruit.type.splatter;
-          splatterSprite.x = fx;
-          splatterSprite.y = fy;
+        let splatterSprite = new Sprite();
+        splatterSprite.img = fruit.type.splatter;
+        splatterSprite.x = fx;
+        splatterSprite.y = fy;
         splatterSprite.life = 30;
         splatterSprite.collider = "kinematic";
 
