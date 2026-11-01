@@ -153,7 +153,8 @@ function draw(){
     trail.collider = 'none';
     trail.color = "red";
     trail.life = 10;
-    sliceFruit(chance);
+    sliceFruit(1);
+    sliceFruit(2);
     sliceBomb();
   }
 
@@ -247,7 +248,11 @@ function sliceFruit(chance) {
     for (let fruit of fruitGroup) {
       if (fruit.sliced){
         continue; // skip already sliced fruits
-      } 
+      }
+      
+      if (fruit.chance !== 1){
+        continue;
+      }
 
     // calculate distance between mouse and fruit
       let d = dist(mouse.x, mouse.y, fruit.x, fruit.y); 
@@ -278,6 +283,10 @@ function sliceFruit(chance) {
     for (let fruit of fruitGroup) {
       if (fruit.sliced){
         continue; // skip already sliced fruits 
+      }
+
+      if (fruit.chance !== 2) {
+        continue;
       }
 
       let d = dist(mouse.x, mouse.y, fruit.x, fruit.y); 
