@@ -22,6 +22,7 @@ let chance;
 
 let colour1, colour2, colour3;
 
+let timeFruit; // forgotten
 
 function preload(){
   dojoBG =loadImage('assets/dojobackground.png');
@@ -110,7 +111,7 @@ function draw(){
     textSize(48);
     text('Fruit Ninja', width / 2, height / 2 - 40);
     textSize(24);
-    text('Press SPACE or Click to Start', width / 2, height / 2 + 20);
+    text('Press space or click to Start', width / 2, height / 2 + 20);
     backgroundTrack.stop();
     return; // do not process rest of this function
   }
@@ -127,7 +128,7 @@ function draw(){
     text("Fruit score: " + score, "x 100 = ", score * 100, width / 2, height / 2);
     text("Missed fruits penalty: " + missedFruits, "x 100 = ", missedFruits *100, width / 2, height / 2 + 40);
     fill(0, 225, 0)
-    text("Final score: ", score * 100, missedFruits * 100, " x(score * 100) - (missedFruits * 100), width / 2, height / 2 + 90)
+    text("Final score: ", score * 100, missedFruits * 100, " x ", (score * 100) - (missedFruits * 100), width / 2, height / 2 + 90)
     text("Press space or click to restart.", width / 2, height / 2 + 120);
     backgroundTrack.stop();
     return;
