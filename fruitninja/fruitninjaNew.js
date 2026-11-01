@@ -83,6 +83,7 @@ function setup(){
 }
 
 function draw(){
+  gameDuration += 3
   clear(); // optional to clear before applying an image.
   image(dojoBG, 0, 0, width, height);
 
