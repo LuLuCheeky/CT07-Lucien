@@ -52,6 +52,7 @@ function preload(){
     half1: loadImage("assets/fruitninja_clockHalf1.png"),
     half2: loadImage("assets/fruitninja_clockHalf2.png"),
     splatter: loadImage("assets/fruitninja_star.png"),
+    effect: "addtime",
   }
 
   // store the fruit objects into an array
@@ -199,7 +200,7 @@ function draw(){
 }
 
 function spawnFruit(){
-  chance = random(1, 2)
+  let chance = random(1, 2)
   if (chance === 1) {
     let fruitData = random(fruitTypes); // pick one at random
     let randomX = random(300, 500); // random X to spawn
@@ -256,9 +257,36 @@ function sliceFruit() {
       }
     }
   } else if (chance === 2) {
-    
-  }
+    for (let fruit of fruitGroup) {
+      if (fruit.sliced){
+        continue; // skip already sliced fruits 
+      }
+    }
 
+    let d = dist(mouse.x, mouse.y, fruit.x, fruit.y); 
+
+    if (d < ((fruit.d / 2) + 5)) {
+      fruit.sliced = true; // prevent repeat slicing
+
+      const fx = fruit.x;
+      const fy = fruit.y;
+
+      fruit.remove(); // remove whole fruit
+      sliceSound.play();
+
+      let splatterSprite = new Sprite();
+      splatterSprite.img = fruit.type.splatter;
+      splatterSprite.x = fx;
+      splatterSprite.y = fy;
+      splatterSprite.life = 30;
+      splatterSprite.collider = "kinematic";
+
+      splitFruit(fx, fy, fruit.type); // spawn halves
+      score += 1 // increase score by 1
+      
+      break; // only slice one fruit per frame
+    }
+  }
 }
 
 // Split a fruit into two halves and animate them
