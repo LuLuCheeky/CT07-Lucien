@@ -213,7 +213,7 @@ function spawnFruit(chance){
     fruit.vel.y = random(-10, -14); // shoot upward at random velocity
     fruit.vel.x = random(-2, 2); // sideways curve
     fruit.friction = 0; // no friction
-    console.log(FunctionTypes)
+    console.log(fruitTypes)
   } else if (chance === 2) {
     console.log("time")
     let fruitData = fruitTypes[timeFruit];
