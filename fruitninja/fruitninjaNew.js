@@ -76,6 +76,8 @@ function setup(){
 
   backgroundTrack.setVolume(0.35);
   bomb.sound.setVolume(100);
+
+  final
 }
 
 function draw(){
