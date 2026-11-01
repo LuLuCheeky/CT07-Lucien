@@ -19,6 +19,7 @@ let lives = 3;
 let bomb;
 let bombGroup;
 let chance;
+let finalScore, finalMissedFruits;
 
 let colour1, colour2, colour3;
 
@@ -50,7 +51,7 @@ function preload(){
   }
 
   timeFruit = {
-    image: loadImage("assets/fruitninja_clock.png"),
+    whole: loadImage("assets/fruitninja_clock.png"), // image changed to whole
     half1: loadImage("assets/fruitninja_clockHalf1.png"),
     half2: loadImage("assets/fruitninja_clockHalf2.png"),
     splatter: loadImage("assets/fruitninja_star.png"),
@@ -58,7 +59,7 @@ function preload(){
   }
 
   // store the fruit objects into an array
-  fruitTypes = [peach, watermelon, timeFruit];
+  fruitTypes = [peach, watermelon]; //removed timeFruit
 
   sliceSound = loadSound("assets/fruit-ninja-combo.mp3");
   backgroundTrack = loadSound("assets/fruit-ninja-bgtrack.mp3")
