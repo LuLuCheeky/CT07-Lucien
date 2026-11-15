@@ -14,6 +14,8 @@ let runSpeed = 0;
 let boostFrames = 0;
 let grabReady = false;
 let flightFrames = 0;
+let landingBoostFrames = 0;
+let longJumpActive = false;
 let stunFrames = 0;
 let enemyStun = 0;
 let circleX = -1000;
@@ -48,14 +50,14 @@ function update() {
   if (gameResult) return;
 
   if (kb.presses("x")) {
-    if (phase === "outbound" && !pillarKnockedDown()) {
-      boostFrames = 32;
-      grabReady = true;
-      runner.vel.x = facing * 13;
-    } else if (flightFrames === 0 && !wasGrounded && kb.pressing("up")) {
+    if (!wasGrounded && kb.pressing("up")) {
       flightFrames = 48;
       runner.vel.x = facing * 18;
       runner.vel.y = min(runner.vel.y, -2);
+    } else {
+      boostFrames = 32;
+      grabReady = true;
+      runner.vel.x = facing * 13;
     }
   }
 
@@ -71,8 +73,12 @@ function update() {
   } else if (direction !== 0) {
     const cap = running ? 24 : 4;
     runSpeed = min(cap, runSpeed + (running ? 0.28 : 0.35));
-    const targetSpeed = boostFrames > 0 ? max(runSpeed, 14) : runSpeed;
+    const targetSpeed = landingBoostFrames > 0
+      ? max(runSpeed, 18)
+      : boostFrames > 0 ? max(runSpeed, 14) : runSpeed;
     runner.vel.x = direction * targetSpeed;
+  } else if (landingBoostFrames > 0 || boostFrames > 0) {
+    runner.vel.x = facing * max(runSpeed, landingBoostFrames > 0 ? 18 : 14);
   } else {
     runSpeed = max(0, runSpeed - 0.5);
     runner.vel.x *= 0.82;
@@ -85,6 +91,7 @@ function update() {
     if (longJump) {
       runner.vel.x = facing * max(abs(runner.vel.x), 15);
       runSpeed = max(runSpeed, 15);
+      longJumpActive = true;
       grabReady = false;
     }
   }
@@ -94,6 +101,7 @@ function update() {
   }
 
   if (boostFrames > 0) boostFrames--;
+  if (landingBoostFrames > 0) landingBoostFrames--;
   if (flightFrames > 0) {
     runner.vel.x = facing * 18;
     runner.vel.y = min(runner.vel.y, -1.5);
@@ -101,8 +109,10 @@ function update() {
   }
 
   runner.x = constrain(runner.x, 20, LEVEL_END - 20);
-  if (onFloor && wasGrounded === false) {
+  if (onFloor && wasGrounded === false && longJumpActive) {
     runSpeed = max(runSpeed, 18);
+    landingBoostFrames = 40;
+    longJumpActive = false;
   }
   wasGrounded = onFloor;
 
@@ -143,10 +153,6 @@ function updateEnemies() {
   }
 
   if (enemyStun > 0) enemyStun--;
-}
-
-function pillarKnockedDown() {
-  return phase !== "outbound";
 }
 
 function checkPillar() {
