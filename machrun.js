@@ -6,6 +6,7 @@ const PILLAR_X = 1840;
 let runner;
 let enemies;
 const pressedKeys = new Set();
+const heldKeys = new Set();
 let phase = "outbound";
 let startedAt = 0;
 let gameResult = "";
@@ -26,6 +27,9 @@ let wasGrounded = true;
 function setup() {
   new Canvas(800, 450);
   world.gravity.y = 1.4;
+  window.addEventListener("keydown", handleGameKeyDown);
+  window.addEventListener("keyup", handleGameKeyUp);
+  window.addEventListener("blur", clearGameKeys);
 
   const floorBody = new Sprite(LEVEL_END / 2, FLOOR_Y + 18, LEVEL_END, 36, "static");
   floorBody.visible = false;
@@ -43,11 +47,11 @@ function setup() {
   ];
 }
 
-function update() {
+function gameStep() {
   if (gameResult) return;
   if (hitCooldown > 0) hitCooldown--;
 
-  const up = keyIsDown(UP_ARROW);
+  const up = heldKeys.has("arrowup");
   if (pressedKeys.has("x")) {
     if (!wasGrounded && up) {
       flightFrames = 48;
@@ -60,10 +64,10 @@ function update() {
     }
   }
 
-  const left = keyIsDown(LEFT_ARROW);
-  const right = keyIsDown(RIGHT_ARROW);
+  const left = heldKeys.has("arrowleft");
+  const right = heldKeys.has("arrowright");
   const direction = (right ? 1 : 0) - (left ? 1 : 0);
-  const running = keyIsDown(17);
+  const running = heldKeys.has("control");
 
   if (direction !== 0) facing = direction;
   if (stunFrames > 0) {
@@ -136,17 +140,25 @@ function update() {
   pressedKeys.clear();
 }
 
-function keyPressed() {
-  pressedKeys.add(key.toLowerCase());
-  if ([UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, 32].includes(keyCode)) {
-    return false;
+function handleGameKeyDown(event) {
+  const pressed = event.key.toLowerCase();
+  heldKeys.add(pressed);
+  if (!event.repeat) pressedKeys.add(pressed);
+  if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(pressed)) {
+    event.preventDefault();
   }
 }
 
-function keyReleased() {
-  if ([UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, 32].includes(keyCode)) {
-    return false;
+function handleGameKeyUp(event) {
+  heldKeys.delete(event.key.toLowerCase());
+  if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(event.key.toLowerCase())) {
+    event.preventDefault();
   }
+}
+
+function clearGameKeys() {
+  heldKeys.clear();
+  pressedKeys.clear();
 }
 
 function updateEnemies() {
@@ -180,6 +192,7 @@ function checkPillar() {
 }
 
 function draw() {
+  gameStep();
   background("#242b3a");
   camera.x = constrain(runner.x, width / 2, LEVEL_END - width / 2);
   camera.y = height / 2;
