@@ -6,6 +6,8 @@ const WALK_SPEED = 2.5;
 const RUN_SPEED = 14;
 const RUN_ACCELERATION = 0.12;
 const GRAB_SPEED = 6.5;
+const MAX_SUPER_JUMP_HOLD = 18;
+const SUPER_JUMP_HOLD_ACCELERATION = 0.08;
 
 let runner;
 let enemies;
@@ -19,8 +21,11 @@ let runSpeed = 0;
 let boostFrames = 0;
 let grabReady = false;
 let flightFrames = 0;
+let flightUsed = false;
 let landingBoostFrames = 0;
 let longJumpActive = false;
+let superJumpActive = false;
+let superJumpHoldFrames = 0;
 let stunFrames = 0;
 let hitCooldown = 0;
 let enemyStun = 0;
@@ -58,10 +63,11 @@ function gameStep() {
 
   const up = heldKeys.has("arrowup");
   if (pressedKeys.has("x")) {
-    if (!wasGrounded && up) {
+    if (!wasGrounded && longJumpActive && !flightUsed) {
       flightFrames = 36;
       runner.vel.x = facing * 10;
-    } else {
+      flightUsed = true;
+    } else if (wasGrounded) {
       boostFrames = 32;
       grabReady = true;
       runner.vel.x = facing * GRAB_SPEED;
@@ -96,13 +102,23 @@ function gameStep() {
   const superJump = up && !upWasDown;
   if ((normalJump || superJump) && onFloor) {
     const longJump = grabReady;
-    runner.vel.y = superJump ? -6 : longJump ? -4.5 : -4;
+    runner.vel.y = longJump ? -7 : superJump ? -6 : -4;
+    superJumpActive = superJump;
+    superJumpHoldFrames = 0;
     if (longJump) {
-      runner.vel.x = facing * max(abs(runner.vel.x), 9);
-      runSpeed = max(runSpeed, 9);
+      runner.vel.x = facing * max(abs(runner.vel.x), 11);
+      runSpeed = max(runSpeed, 11);
       longJumpActive = true;
+      flightUsed = false;
       grabReady = false;
     }
+  }
+
+  if (superJumpActive && up && runner.vel.y < 0 && superJumpHoldFrames < MAX_SUPER_JUMP_HOLD) {
+    runner.vel.y -= SUPER_JUMP_HOLD_ACCELERATION;
+    superJumpHoldFrames++;
+  } else if (!up || runner.vel.y >= 0 || superJumpHoldFrames >= MAX_SUPER_JUMP_HOLD) {
+    superJumpActive = false;
   }
 
   if (boostFrames > 0) boostFrames--;
@@ -113,10 +129,15 @@ function gameStep() {
   }
 
   runner.x = constrain(runner.x, 20, LEVEL_END - 20);
-  if (onFloor && wasGrounded === false && longJumpActive) {
-    runSpeed = max(runSpeed, 9);
-    landingBoostFrames = 40;
+  if (onFloor && wasGrounded === false) {
+    if (longJumpActive) {
+      runSpeed = max(runSpeed, 11);
+      landingBoostFrames = 40;
+    }
     longJumpActive = false;
+    flightFrames = 0;
+    flightUsed = false;
+    superJumpActive = false;
   }
   wasGrounded = onFloor;
   upWasDown = up;
