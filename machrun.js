@@ -5,7 +5,7 @@ const PILLAR_X = 1840;
 const WALK_SPEED = 2.5;
 const RUN_SPEED = 14;
 const RUN_ACCELERATION = 0.12;
-const GRAB_SPEED = 8.5;
+const GRAB_SPEED = 6.5;
 
 let runner;
 let enemies;
