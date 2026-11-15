@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mach Run</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.26.5/planck.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.26.5/p5play.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 18px;
+      color: #f7f1e7;
+      background: #171923;
+      font: 16px/1.5 system-ui, sans-serif;
+      text-align: center;
+    }
+
+    a { color: #ffd166; }
+
+    main { max-width: 1000px; margin: auto; }
+
+    canvas {
+      display: block;
+      width: min(100%, 960px);
+      height: auto;
+      margin: 16px auto;
+      border: 3px solid #ffd166;
+      border-radius: 8px;
+    }
+
+    .instructions { color: #d7d9e0; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="index.html">← Game hub</a></p>
+    <h1>Mach Run</h1>
+    <p class="instructions">
+      ←/→ move · Hold Ctrl to run · Z jump (hold ↑ for a super jump) · X grab for a burst;
+      grab then jump to long jump · In the air, hold ↑ and press X to fly.
+      Reach the pillar and return to the start before the 2-minute timer runs out!
+    </p>
+    <script src="machrun.js"></script>
+  </main>
+</body>
+</html>
