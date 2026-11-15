@@ -2,6 +2,10 @@ const LEVEL_END = 2200;
 const START_X = 180;
 const FLOOR_Y = 390;
 const PILLAR_X = 1840;
+const WALK_SPEED = 2.5;
+const RUN_SPEED = 14;
+const RUN_ACCELERATION = 0.12;
+const GRAB_SPEED = 8.5;
 
 let runner;
 let enemies;
@@ -23,6 +27,7 @@ let enemyStun = 0;
 let circleX = -1000;
 let circleY = FLOOR_Y - 22;
 let wasGrounded = true;
+let upWasDown = false;
 
 function setup() {
   new Canvas(800, 450);
@@ -54,13 +59,12 @@ function gameStep() {
   const up = heldKeys.has("arrowup");
   if (pressedKeys.has("x")) {
     if (!wasGrounded && up) {
-      flightFrames = 48;
-      runner.vel.x = facing * 18;
-      runner.vel.y = min(runner.vel.y, -2);
+      flightFrames = 36;
+      runner.vel.x = facing * 10;
     } else {
       boostFrames = 32;
       grabReady = true;
-      runner.vel.x = facing * 13;
+      runner.vel.x = facing * GRAB_SPEED;
     }
   }
 
@@ -74,50 +78,48 @@ function gameStep() {
     stunFrames--;
     runner.vel.x *= 0.88;
   } else if (direction !== 0) {
-    const cap = running ? 24 : 4;
-    runSpeed = min(cap, runSpeed + (running ? 0.28 : 0.35));
+    const cap = running ? RUN_SPEED : WALK_SPEED;
+    runSpeed = min(cap, runSpeed + (running ? RUN_ACCELERATION : 0.2));
     const targetSpeed = landingBoostFrames > 0
-      ? max(runSpeed, 18)
-      : boostFrames > 0 ? max(runSpeed, 14) : runSpeed;
+      ? max(runSpeed, 9)
+      : boostFrames > 0 ? max(runSpeed, GRAB_SPEED) : runSpeed;
     runner.vel.x = direction * targetSpeed;
   } else if (landingBoostFrames > 0 || boostFrames > 0) {
-    runner.vel.x = facing * max(runSpeed, landingBoostFrames > 0 ? 18 : 14);
+    runner.vel.x = facing * max(runSpeed, landingBoostFrames > 0 ? 9 : GRAB_SPEED);
   } else {
     runSpeed = max(0, runSpeed - 0.5);
     runner.vel.x *= 0.82;
   }
 
   const onFloor = runner.y >= FLOOR_Y - 25 && runner.vel.y >= 0;
-  if (pressedKeys.has("z") && onFloor) {
+  const normalJump = pressedKeys.has("z");
+  const superJump = up && !upWasDown;
+  if ((normalJump || superJump) && onFloor) {
     const longJump = grabReady;
-    runner.vel.y = up ? -16 : longJump ? -11 : -10;
+    runner.vel.y = superJump ? -13 : longJump ? -9.5 : -8;
     if (longJump) {
-      runner.vel.x = facing * max(abs(runner.vel.x), 15);
-      runSpeed = max(runSpeed, 15);
+      runner.vel.x = facing * max(abs(runner.vel.x), 9);
+      runSpeed = max(runSpeed, 9);
       longJumpActive = true;
       grabReady = false;
     }
   }
 
-  if (up && !onFloor && runner.vel.y > -13) {
-    runner.vel.y -= 0.45;
-  }
-
   if (boostFrames > 0) boostFrames--;
   if (landingBoostFrames > 0) landingBoostFrames--;
   if (flightFrames > 0) {
-    runner.vel.x = facing * 18;
-    runner.vel.y = min(runner.vel.y, -1.5);
+    runner.vel.x = facing * 10;
     flightFrames--;
   }
 
   runner.x = constrain(runner.x, 20, LEVEL_END - 20);
   if (onFloor && wasGrounded === false && longJumpActive) {
-    runSpeed = max(runSpeed, 18);
+    runSpeed = max(runSpeed, 9);
     landingBoostFrames = 40;
     longJumpActive = false;
   }
   wasGrounded = onFloor;
+  upWasDown = up;
 
   updateEnemies();
   checkPillar();
@@ -287,7 +289,7 @@ function drawHud() {
   rect(0, 0, width, 66);
 
   const speed = abs(runner.vel.x);
-  let mach = speed < 6 ? 1 : speed < 14 ? 2 : speed < 20 ? 3 : 4;
+  let mach = speed < 4 ? 1 : speed < 7.5 ? 2 : speed < 11.5 ? 3 : 4;
   fill("#f7f1e7");
   textAlign(LEFT, CENTER);
   textSize(18);
