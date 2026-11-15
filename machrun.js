@@ -17,6 +17,7 @@ let flightFrames = 0;
 let landingBoostFrames = 0;
 let longJumpActive = false;
 let stunFrames = 0;
+let hitCooldown = 0;
 let enemyStun = 0;
 let circleX = -1000;
 let circleY = FLOOR_Y - 22;
@@ -48,6 +49,7 @@ function setup() {
 
 function update() {
   if (gameResult) return;
+  if (hitCooldown > 0) hitCooldown--;
 
   if (kb.presses("x")) {
     if (!wasGrounded && kb.pressing("up")) {
@@ -144,8 +146,9 @@ function updateEnemies() {
       enemy.direction *= -1;
     }
 
-    if (abs(runner.x - enemy.x) < 34 && abs(runner.y - enemy.y) < 48) {
+    if (hitCooldown === 0 && abs(runner.x - enemy.x) < 34 && abs(runner.y - enemy.y) < 48) {
       stunFrames = 48;
+      hitCooldown = 75;
       runSpeed = 0;
       boostFrames = 0;
       runner.vel.x = -facing * 3;
