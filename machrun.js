@@ -63,7 +63,7 @@ function gameStep() {
 
   const up = heldKeys.has("arrowup");
   if (pressedKeys.has("x")) {
-    if (!wasGrounded && longJumpActive && !flightUsed) {
+    if (!wasGrounded && longJumpActive && up && !flightUsed) {
       flightFrames = 36;
       runner.vel.x = facing * 10;
       flightUsed = true;
@@ -240,6 +240,13 @@ function draw() {
     }
   }
   drawStickFigure(runner.x, runner.y, facing, stunFrames > 0 ? "#aeb4c2" : "#ffe082");
+  if (longJumpActive) {
+    noStroke();
+    fill("#8be9fd");
+    textAlign(CENTER);
+    textSize(14);
+    text(flightUsed ? "AIR DASH!" : "LONG JUMP · HOLD ↑ + X TO FLY", runner.x, runner.y - 48);
+  }
 
   if (phase === "chased") {
     fill("#ec4899");
