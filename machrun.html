@@ -10,37 +10,59 @@
   <style>
     body {
       margin: 0;
-      padding: 18px;
+      padding: 8px 12px;
       color: #f7f1e7;
       background: #171923;
       font: 16px/1.5 system-ui, sans-serif;
       text-align: center;
+      overflow: hidden;
     }
 
     a { color: #ffd166; }
 
-    main { max-width: 1000px; margin: auto; }
+    main { max-width: 840px; margin: auto; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      height: 38px;
+    }
+
+    h1 { margin: 0; font-size: 24px; }
+
+    header p { margin: 0; }
 
     canvas {
       display: block;
-      width: min(100%, 960px);
+      width: auto;
       height: auto;
-      margin: 16px auto;
+      max-width: 100%;
+      max-height: calc(100vh - 100px);
+      margin: 4px auto;
       border: 3px solid #ffd166;
       border-radius: 8px;
     }
 
-    .instructions { color: #d7d9e0; }
+    .instructions { margin: 4px 0; color: #d7d9e0; }
+
+    @media (max-width: 600px) {
+      .instructions { font-size: 13px; line-height: 1.25; }
+      header { height: 32px; }
+      h1 { font-size: 20px; }
+    }
   </style>
 </head>
 <body>
   <main>
-    <p><a href="index.html">← Game hub</a></p>
-    <h1>Mach Run</h1>
+    <header>
+      <p><a href="index.html">← Game hub</a></p>
+      <h1>Mach Run</h1>
+      <p>2-minute round trip</p>
+    </header>
     <p class="instructions">
-      ←/→ move · Hold Ctrl to run · Z jump (hold ↑ for a super jump) · X grab for a burst;
-      grab then jump to long jump · In the air, hold ↑ and press X to fly.
-      Reach the pillar and return to the start before the 2-minute timer runs out!
+      ←/→ move · Ctrl run · Z jump (hold ↑ higher) · X grab; grab then jump to long-jump · In air: ↑ + X to fly
     </p>
     <script src="machrun.js"></script>
   </main>

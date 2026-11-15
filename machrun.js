@@ -1,10 +1,11 @@
 const LEVEL_END = 2200;
 const START_X = 180;
-const FLOOR_Y = 480;
+const FLOOR_Y = 390;
 const PILLAR_X = 1840;
 
 let runner;
 let enemies;
+const pressedKeys = new Set();
 let phase = "outbound";
 let startedAt = 0;
 let gameResult = "";
@@ -23,7 +24,7 @@ let circleY = FLOOR_Y - 22;
 let wasGrounded = true;
 
 function setup() {
-  new Canvas(960, 540);
+  new Canvas(800, 450);
   world.gravity.y = 1.4;
 
   const floorBody = new Sprite(LEVEL_END / 2, FLOOR_Y + 18, LEVEL_END, 36, "static");
@@ -46,8 +47,9 @@ function update() {
   if (gameResult) return;
   if (hitCooldown > 0) hitCooldown--;
 
-  if (kb.presses("x")) {
-    if (!wasGrounded && kb.pressing("up")) {
+  const up = keyIsDown(UP_ARROW);
+  if (pressedKeys.has("x")) {
+    if (!wasGrounded && up) {
       flightFrames = 48;
       runner.vel.x = facing * 18;
       runner.vel.y = min(runner.vel.y, -2);
@@ -58,10 +60,10 @@ function update() {
     }
   }
 
-  const left = kb.pressing("arrowLeft");
-  const right = kb.pressing("arrowRight");
+  const left = keyIsDown(LEFT_ARROW);
+  const right = keyIsDown(RIGHT_ARROW);
   const direction = (right ? 1 : 0) - (left ? 1 : 0);
-  const running = kb.pressing("control");
+  const running = keyIsDown(17);
 
   if (direction !== 0) facing = direction;
   if (stunFrames > 0) {
@@ -82,9 +84,9 @@ function update() {
   }
 
   const onFloor = runner.y >= FLOOR_Y - 25 && runner.vel.y >= 0;
-  if (kb.presses("z") && onFloor) {
+  if (pressedKeys.has("z") && onFloor) {
     const longJump = grabReady;
-    runner.vel.y = kb.pressing("up") ? -16 : longJump ? -11 : -10;
+    runner.vel.y = up ? -16 : longJump ? -11 : -10;
     if (longJump) {
       runner.vel.x = facing * max(abs(runner.vel.x), 15);
       runSpeed = max(runSpeed, 15);
@@ -93,7 +95,7 @@ function update() {
     }
   }
 
-  if (kb.pressing("up") && !onFloor && runner.vel.y > -13) {
+  if (up && !onFloor && runner.vel.y > -13) {
     runner.vel.y -= 0.45;
   }
 
@@ -129,6 +131,21 @@ function update() {
 
   if (phase !== "outbound" && runner.x <= START_X + 18) {
     gameResult = phase === "returning" ? "win" : "caught";
+  }
+
+  pressedKeys.clear();
+}
+
+function keyPressed() {
+  pressedKeys.add(key.toLowerCase());
+  if ([UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, 32].includes(keyCode)) {
+    return false;
+  }
+}
+
+function keyReleased() {
+  if ([UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, 32].includes(keyCode)) {
+    return false;
   }
 }
 
