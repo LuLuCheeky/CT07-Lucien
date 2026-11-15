@@ -31,7 +31,7 @@ let upWasDown = false;
 
 function setup() {
   new Canvas(800, 450);
-  world.gravity.y = 1.4;
+  world.gravity.y = 12;
   window.addEventListener("keydown", handleGameKeyDown);
   window.addEventListener("keyup", handleGameKeyUp);
   window.addEventListener("blur", clearGameKeys);
@@ -96,7 +96,7 @@ function gameStep() {
   const superJump = up && !upWasDown;
   if ((normalJump || superJump) && onFloor) {
     const longJump = grabReady;
-    runner.vel.y = superJump ? -13 : longJump ? -9.5 : -8;
+    runner.vel.y = superJump ? -6 : longJump ? -4.5 : -4;
     if (longJump) {
       runner.vel.x = facing * max(abs(runner.vel.x), 9);
       runSpeed = max(runSpeed, 9);
