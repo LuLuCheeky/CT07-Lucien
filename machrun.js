@@ -4,7 +4,6 @@ const FLOOR_Y = 480;
 const PILLAR_X = 1840;
 
 let runner;
-let ground;
 let enemies;
 let phase = "outbound";
 let startedAt = 0;
@@ -27,15 +26,11 @@ function setup() {
   new Canvas(960, 540);
   world.gravity.y = 1.4;
 
-  ground = new Group();
-  ground.collider = "static";
-  ground.color = "#394653";
-  ground.stroke = "#6b7785";
-  new ground.Sprite(LEVEL_END / 2, FLOOR_Y + 18, LEVEL_END, 36);
+  const floorBody = new Sprite(LEVEL_END / 2, FLOOR_Y + 18, LEVEL_END, 36, "static");
+  floorBody.visible = false;
 
   runner = new Sprite(START_X, FLOOR_Y - 25, 22, 46, "dynamic");
-  runner.color = "transparent";
-  runner.stroke = "transparent";
+  runner.visible = false;
   runner.rotationLock = true;
   runner.friction = 0;
   runner.bounciness = 0;
@@ -167,13 +162,15 @@ function checkPillar() {
   }
 }
 
-function drawFrame() {
+function draw() {
   background("#242b3a");
   camera.x = constrain(runner.x, width / 2, LEVEL_END - width / 2);
   camera.y = height / 2;
   camera.on();
 
   noStroke();
+  fill("#394653");
+  rect(0, FLOOR_Y, LEVEL_END, 60);
   fill("#30394a");
   for (let x = 70; x < LEVEL_END; x += 180) {
     rect(x, 105 + (x % 3) * 16, 86, 260);
@@ -182,7 +179,6 @@ function drawFrame() {
     fill("#30394a");
   }
 
-  allSprites.draw();
   drawRouteMarkers();
   drawPillar();
   for (const enemy of enemies) {
