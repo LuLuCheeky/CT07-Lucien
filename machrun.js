@@ -3,16 +3,20 @@ const START_X = 180;
 const FLOOR_Y = 390;
 const PILLAR_X = 1840;
 const WALK_SPEED = 2.5;
-const RUN_SPEED = 14;
-const RUN_ACCELERATION = 0.12;
-const GRAB_SPEED = 6.5;
-const MAX_SUPER_JUMP_HOLD = 18;
-const SUPER_JUMP_HOLD_ACCELERATION = 0.08;
+const RUN_SPEED = 10;
+const RUN_ACCELERATION = 0.035;
+const GRAB_SPEED = 5;
+const GRAB_WINDOW_FRAMES = 90;
+const JUMP_CHARGE_FRAMES = 36;
+const MIN_LONG_JUMP_CHARGE = 8;
+const MAX_SUPER_JUMP_HOLD = 30;
+const SUPER_JUMP_HOLD_ACCELERATION = 0.1;
 
 let runner;
 let enemies;
 const pressedKeys = new Set();
 const heldKeys = new Set();
+const releasedKeys = new Set();
 let phase = "outbound";
 let startedAt = 0;
 let gameResult = "";
@@ -20,6 +24,8 @@ let facing = 1;
 let runSpeed = 0;
 let boostFrames = 0;
 let grabReady = false;
+let grabWindowFrames = 0;
+let jumpChargeFrames = 0;
 let flightFrames = 0;
 let flightUsed = false;
 let landingBoostFrames = 0;
@@ -32,7 +38,6 @@ let enemyStun = 0;
 let circleX = -1000;
 let circleY = FLOOR_Y - 22;
 let wasGrounded = true;
-let upWasDown = false;
 
 function setup() {
   new Canvas(800, 450);
@@ -51,9 +56,9 @@ function setup() {
   runner.bounciness = 0;
 
   enemies = [
-    { x: 660, y: FLOOR_Y - 24, direction: 1, left: 570, right: 820 },
-    { x: 1190, y: FLOOR_Y - 24, direction: -1, left: 1050, right: 1350 },
-    { x: 1580, y: FLOOR_Y - 24, direction: 1, left: 1480, right: 1710 }
+    { x: 660, y: FLOOR_Y - 24, direction: 1, left: 570, right: 820, stunFrames: 0 },
+    { x: 1190, y: FLOOR_Y - 24, direction: -1, left: 1050, right: 1350, stunFrames: 0 },
+    { x: 1580, y: FLOOR_Y - 24, direction: 1, left: 1480, right: 1710, stunFrames: 0 }
   ];
 }
 
@@ -62,14 +67,18 @@ function gameStep() {
   if (hitCooldown > 0) hitCooldown--;
 
   const up = heldKeys.has("arrowup");
+  const onFloor = runner.y >= FLOOR_Y - 25 && runner.vel.y >= 0;
+
   if (pressedKeys.has("x")) {
     if (!wasGrounded && longJumpActive && up && !flightUsed) {
       flightFrames = 36;
       runner.vel.x = facing * 10;
       flightUsed = true;
-    } else if (wasGrounded) {
-      boostFrames = 32;
+    } else if (onFloor) {
+      boostFrames = 24;
       grabReady = true;
+      grabWindowFrames = GRAB_WINDOW_FRAMES;
+      jumpChargeFrames = 0;
       runner.vel.x = facing * GRAB_SPEED;
     }
   }
@@ -97,24 +106,37 @@ function gameStep() {
     runner.vel.x *= 0.82;
   }
 
-  const onFloor = runner.y >= FLOOR_Y - 25 && runner.vel.y >= 0;
   const normalJump = pressedKeys.has("z");
-  const superJump = up && !upWasDown;
-  if ((normalJump || superJump) && onFloor) {
-    const longJump = grabReady;
-    runner.vel.y = longJump ? -7 : superJump ? -6 : -4;
-    superJumpActive = superJump;
-    superJumpHoldFrames = 0;
-    if (longJump) {
-      runner.vel.x = facing * max(abs(runner.vel.x), 11);
-      runSpeed = max(runSpeed, 11);
-      longJumpActive = true;
-      flightUsed = false;
-      grabReady = false;
-    }
+  const longJumpChargeStarted = normalJump && onFloor && grabReady && jumpChargeFrames === 0;
+  if (longJumpChargeStarted) jumpChargeFrames = 1;
+  else if (onFloor && grabReady && heldKeys.has("z")) {
+    jumpChargeFrames = min(JUMP_CHARGE_FRAMES, jumpChargeFrames + 1);
   }
 
-  if (superJumpActive && up && runner.vel.y < 0 && superJumpHoldFrames < MAX_SUPER_JUMP_HOLD) {
+  if (pressedKeys.has("z") && onFloor && !grabReady) {
+    runner.vel.y = -6;
+  }
+
+  if (releasedKeys.has("z") && onFloor && grabReady && jumpChargeFrames >= MIN_LONG_JUMP_CHARGE) {
+    const charge = jumpChargeFrames / JUMP_CHARGE_FRAMES;
+    runner.vel.y = -6.5 - charge * 2.5;
+    runner.vel.x = facing * max(abs(runner.vel.x), 7 + charge * 3);
+    runSpeed = max(runSpeed, 7 + charge * 3);
+    longJumpActive = true;
+    flightUsed = false;
+    grabReady = false;
+    grabWindowFrames = 0;
+    jumpChargeFrames = 0;
+  } else if (releasedKeys.has("z") && onFloor && grabReady) {
+    jumpChargeFrames = 0;
+  }
+
+  const superJumpStarted = up && pressedKeys.has("arrowup") && onFloor && !grabReady;
+  if (superJumpStarted) {
+    runner.vel.y = -6.5;
+    superJumpActive = true;
+    superJumpHoldFrames = 1;
+  } else if (superJumpActive && up && runner.vel.y < 0 && superJumpHoldFrames < MAX_SUPER_JUMP_HOLD) {
     runner.vel.y -= SUPER_JUMP_HOLD_ACCELERATION;
     superJumpHoldFrames++;
   } else if (!up || runner.vel.y >= 0 || superJumpHoldFrames >= MAX_SUPER_JUMP_HOLD) {
@@ -123,6 +145,13 @@ function gameStep() {
 
   if (boostFrames > 0) boostFrames--;
   if (landingBoostFrames > 0) landingBoostFrames--;
+  if (grabWindowFrames > 0) {
+    grabWindowFrames--;
+    if (grabWindowFrames === 0) {
+      grabReady = false;
+      jumpChargeFrames = 0;
+    }
+  }
   if (flightFrames > 0) {
     runner.vel.x = facing * 10;
     flightFrames--;
@@ -131,7 +160,7 @@ function gameStep() {
   runner.x = constrain(runner.x, 20, LEVEL_END - 20);
   if (onFloor && wasGrounded === false) {
     if (longJumpActive) {
-      runSpeed = max(runSpeed, 11);
+      runSpeed = max(runSpeed, RUN_SPEED);
       landingBoostFrames = 40;
     }
     longJumpActive = false;
@@ -140,7 +169,6 @@ function gameStep() {
     superJumpActive = false;
   }
   wasGrounded = onFloor;
-  upWasDown = up;
 
   updateEnemies();
   checkPillar();
@@ -161,6 +189,7 @@ function gameStep() {
   }
 
   pressedKeys.clear();
+  releasedKeys.clear();
 }
 
 function handleGameKeyDown(event) {
@@ -173,8 +202,10 @@ function handleGameKeyDown(event) {
 }
 
 function handleGameKeyUp(event) {
-  heldKeys.delete(event.key.toLowerCase());
-  if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(event.key.toLowerCase())) {
+  const released = event.key.toLowerCase();
+  heldKeys.delete(released);
+  releasedKeys.add(released);
+  if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(released)) {
     event.preventDefault();
   }
 }
@@ -182,10 +213,15 @@ function handleGameKeyUp(event) {
 function clearGameKeys() {
   heldKeys.clear();
   pressedKeys.clear();
+  releasedKeys.clear();
 }
 
 function updateEnemies() {
   for (const enemy of enemies) {
+    if (enemy.stunFrames > 0) {
+      enemy.stunFrames--;
+      continue;
+    }
     if (enemyStun > 0) continue;
 
     enemy.x += enemy.direction * 1.4;
@@ -193,7 +229,11 @@ function updateEnemies() {
       enemy.direction *= -1;
     }
 
-    if (hitCooldown === 0 && abs(runner.x - enemy.x) < 34 && abs(runner.y - enemy.y) < 48) {
+    const touching = abs(runner.x - enemy.x) < 40 && abs(runner.y - enemy.y) < 48;
+    if (boostFrames > 0 && touching) {
+      enemy.stunFrames = 120;
+      boostFrames = 0;
+    } else if (hitCooldown === 0 && touching) {
       stunFrames = 48;
       hitCooldown = 75;
       runSpeed = 0;
@@ -210,7 +250,7 @@ function checkPillar() {
     phase = "returning";
     startedAt = millis();
     enemyStun = 180;
-    runSpeed = max(runSpeed, 12);
+    runSpeed = max(runSpeed, RUN_SPEED);
   }
 }
 
@@ -235,11 +275,15 @@ function draw() {
   drawRouteMarkers();
   drawPillar();
   for (const enemy of enemies) {
-    if (enemyStun === 0 || frameCount % 8 < 4) {
-      drawStickFigure(enemy.x, enemy.y, enemy.direction, "#ff6b6b");
-    }
+    const tint = enemyStun > 0 || enemy.stunFrames > 0 ? "#aeb4c2" : "#ff6b6b";
+    drawStickFigure(enemy.x, enemy.y, enemy.direction, tint);
   }
   drawStickFigure(runner.x, runner.y, facing, stunFrames > 0 ? "#aeb4c2" : "#ffe082");
+  if (jumpChargeFrames > 0) {
+    noStroke();
+    fill("#8be9fd");
+    rect(runner.x - 20, runner.y - 44, 40 * jumpChargeFrames / JUMP_CHARGE_FRAMES, 5);
+  }
   if (longJumpActive) {
     noStroke();
     fill("#8be9fd");
@@ -317,7 +361,7 @@ function drawHud() {
   rect(0, 0, width, 66);
 
   const speed = abs(runner.vel.x);
-  let mach = speed < 4 ? 1 : speed < 7.5 ? 2 : speed < 11.5 ? 3 : 4;
+  const mach = speed < 2.5 ? 1 : speed < 5 ? 2 : speed < 7.5 ? 3 : 4;
   fill("#f7f1e7");
   textAlign(LEFT, CENTER);
   textSize(18);
